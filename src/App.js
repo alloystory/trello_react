@@ -1,7 +1,9 @@
+import Lists from './components/Lists'
+
 function App() {
   return (
-    <div>
-      <h1>Hello world</h1>
+    <div className="container-fluid">
+      <Lists />
     </div>
   );
 }
