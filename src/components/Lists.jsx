@@ -5,7 +5,13 @@ class Lists extends Component {
   state = {}
   render() {
     return (
-      <div className="row">
+      <div className="row flex-nowrap">
+        <List />
+        <List />
+        <List />
+        <List />
+        <List />
+        <List />
         <List />
         <List />
         <List />

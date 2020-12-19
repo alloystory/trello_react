@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
+import Card from './Card'
 
 class List extends Component {
   state = {}
   render() {
     return (
-      <div className="col">
-        <div className="row"><h4>Header</h4></div>
+      <div className="list col-2 m-3 p-3 rounded">
+        <div className="row"><h4>List Title</h4></div>
         <div className="row">
-          cards...
+          <Card />
+          <Card />
+          <Card />
         </div>
       </div>
     );
