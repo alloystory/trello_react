@@ -2,7 +2,7 @@ import Lists from './components/Lists'
 
 function App() {
   return (
-    <div className="container-fluid vh-100">
+    <div className="container">
       <Lists />
     </div>
   );

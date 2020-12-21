@@ -1,11 +1,20 @@
-.container-fluid {
-    background: url("./img.jpg");
-    // background-color: #0c0c22;
+@import "~@csstools/normalize.css/normalize.css";
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    // background: url("./img.jpg");
+    background-color: #0c0c22;
     // background-attachment: fixed;
     // overflow-x: auto;
 }
 
-.list {
-    background-color: #EBECF0;
-    flex: 0 0 auto;
-}
+// .list {
+//     background-color: #EBECF0;
+//     flex: 0 0 auto;
+// }
