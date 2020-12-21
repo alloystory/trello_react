@@ -101,6 +101,9 @@ class Board extends Component {
     return (
       <div className="board">
         {listItems}
+        <div className="list-wrapper">
+          <a href="#" className="add-new-list">Add list</a>
+        </div>
       </div>
     );
   }

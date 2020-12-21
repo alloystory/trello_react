@@ -52,9 +52,31 @@ a {
 
 .card:hover {
     background-color: #eeeeee;
-    cursor: pointer;
 }
 
 .card-content {
     word-wrap: break-word;
+}
+
+.add-new-card {
+    display: block;
+    padding: 0.6rem 0.75rem;
+    color: #3d3d3d;
+    border-radius: $border-radius;
+}
+
+.add-new-card:hover {
+    background-color: #d8d8d8;
+}
+
+.add-new-list {
+    display: block;
+    padding: 0.6rem 0.75rem;
+    background-color: rgba(128, 128, 128, 0.5);
+    color: #FFFFFF;
+    border-radius: $border-radius;
+}
+
+.add-new-list:hover {
+    background-color: #d8d8d8;
 }

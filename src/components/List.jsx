@@ -17,6 +17,7 @@ function List(props) {
         </div>
         <div className="list-content">
           {cardItems}
+          <a href="#" className="add-new-card">Add card</a>
         </div>
       </div>
     </div>
