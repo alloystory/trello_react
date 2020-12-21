@@ -1,9 +1,13 @@
 @import "~bootstrap/scss/bootstrap";
 
 .container-fluid {
-    background-color: #0c0c22;
+    background: url("./img.jpg");
+    // background-color: #0c0c22;
+    // background-attachment: fixed;
+    overflow-x: auto;
 }
 
 .list {
-    background-color: #fff;
+    background-color: #EBECF0;
+    flex: 0 0 auto;
 }
