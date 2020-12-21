@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 
 function Card(props) {
   return (
-    <div className="card">
+    <a className="card" href="#">
       <div className="card-content">
         {props.content}
       </div>
-    </div>
+      <div className="card-status">
+        {/* Todo */}
+      </div>
+    </a>
   );
 }
 
