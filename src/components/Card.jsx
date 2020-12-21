@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 
-class Card extends Component {
-  state = {}
-  render() {
-    return (
-      <div className="card">
-        Some Card Content
+function Card(props) {
+  return (
+    <div className="card">
+      <div className="card-content">
+        {props.content}
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default Card;
