@@ -4,9 +4,9 @@ class Card extends Component {
   state = {}
   render() {
     return (
-      <button className="btn btn-block btn-light text-left border-bottom">
+      <div className="card">
         Some Card Content
-      </button>
+      </div>
     );
   }
 }

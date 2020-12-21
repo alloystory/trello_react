@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import List from './List'
 
-class Lists extends Component {
+class Board extends Component {
   state = {}
   render() {
     return (
-      <div className="lists row">
+      <div className="board">
         <List />
         <List />
         <List />
@@ -20,4 +20,4 @@ class Lists extends Component {
   }
 }
 
-export default Lists;
+export default Board;

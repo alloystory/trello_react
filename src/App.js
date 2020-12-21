@@ -1,9 +1,9 @@
-import Lists from './components/Lists'
+import Board from './components/Board'
 
 function App() {
   return (
     <div className="container">
-      <Lists />
+      <Board />
     </div>
   );
 }

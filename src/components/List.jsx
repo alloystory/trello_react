@@ -5,11 +5,13 @@ class List extends Component {
   state = {}
   render() {
     return (
-      <div className="list col-2 my-3 mx-2 p-3 rounded">
-        <h6>List Title</h6>
-        <Card />
-        <Card />
-        <Card />
+      <div className="list-wrapper">
+        <div className="list">
+          <strong>List Title</strong>
+          <Card />
+          <Card />
+          <Card />
+        </div>
       </div>
     );
   }

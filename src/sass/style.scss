@@ -1,5 +1,8 @@
 @import "~@csstools/normalize.css/normalize.css";
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import "./scrollbar.scss";
+
+$border-radius: 4px;
 
 body {
     padding: 0;
@@ -9,14 +12,34 @@ body {
 
 .container {
     height: 100vh;
-    width: 100vw;
-    // background: url("./img.jpg");
     background-color: #0c0c22;
-    // background-attachment: fixed;
-    // overflow-x: auto;
+    display: flex;
+    flex-direction: column;
 }
 
-// .list {
-//     background-color: #EBECF0;
-//     flex: 0 0 auto;
-// }
+.board {
+    flex-grow: 1;
+    display: flex;
+    overflow-x: auto;
+    margin: 0.75rem;
+    // margin-bottom: 0;
+}
+
+.list-wrapper {
+    min-width: 272px;
+    margin: 0 0.25rem;
+}
+
+.list {
+    padding: 0.75rem;
+    background-color: #EBECF0;
+    border-radius: $border-radius;
+}
+
+.card {
+    margin: 0.75rem 0;
+    padding: 0.6rem 0.75rem;
+    background-color: #FFFFFF;
+    border-radius: $border-radius;
+    border-bottom: 1px solid #cfcfcf;
+}
