@@ -43,3 +43,7 @@ body {
     border-radius: $border-radius;
     border-bottom: 1px solid #cfcfcf;
 }
+
+.card-content {
+    word-wrap: break-word;
+}
