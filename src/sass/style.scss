@@ -1,82 +1,95 @@
 @import "~@csstools/normalize.css/normalize.css";
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
 @import "./scrollbar.scss";
 
 $border-radius: 4px;
 
 body {
-    padding: 0;
-    margin: 0;
-    font-family: 'Open Sans', sans-serif;
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 .container {
-    height: 100vh;
-    background-color: #0c0c22;
-    display: flex;
-    flex-direction: column;
+  height: 100vh;
+  background-color: #0c0c22;
+  display: flex;
+  flex-direction: column;
 }
 
 .board {
-    flex-grow: 1;
-    display: flex;
-    overflow-x: auto;
-    margin: 0.75rem;
-    border-radius: $border-radius;
+  flex-grow: 1;
+  display: flex;
+  overflow-x: auto;
+  margin: 0.75rem;
+  border-radius: $border-radius;
 }
 
 .list-wrapper {
-    min-width: 272px;
-    margin: 0 0.25rem;
+  min-width: 272px;
+  margin: 0 0.25rem;
 }
 
 .list {
-    padding: 0.75rem;
-    background-color: #EBECF0;
-    border-radius: $border-radius;
+  padding: 0.75rem;
+  background-color: #ebecf0;
+  border-radius: $border-radius;
+}
+
+.list-header {
+  input {
+    background-color: transparent;
+    border: none;
+    font: inherit;
+    font-weight: bold;
+  }
+
+  input:focus {
+    background-color: #ffffff;
+  }
 }
 
 .card {
-    display: block;
-    margin: 0.75rem 0;
-    padding: 0.6rem 0.75rem;
-    background-color: #FFFFFF;
-    border-radius: $border-radius;
-    border-bottom: 1px solid #cfcfcf;
+  display: block;
+  margin: 0.75rem 0;
+  padding: 0.6rem 0.75rem;
+  background-color: #ffffff;
+  border-radius: $border-radius;
+  border-bottom: 1px solid #cfcfcf;
 }
 
 .card:hover {
-    background-color: #eeeeee;
+  background-color: #eeeeee;
 }
 
 .card-content {
-    word-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .add-new-card {
-    display: block;
-    padding: 0.6rem 0.75rem;
-    color: #3d3d3d;
-    border-radius: $border-radius;
+  display: block;
+  padding: 0.6rem 0.75rem;
+  color: #3d3d3d;
+  border-radius: $border-radius;
 }
 
 .add-new-card:hover {
-    background-color: #d8d8d8;
+  background-color: #d8d8d8;
 }
 
 .add-new-list {
-    display: block;
-    padding: 0.6rem 0.75rem;
-    background-color: rgba(128, 128, 128, 0.5);
-    color: #FFFFFF;
-    border-radius: $border-radius;
+  display: block;
+  padding: 0.6rem 0.75rem;
+  background-color: rgba(128, 128, 128, 0.5);
+  color: #ffffff;
+  border-radius: $border-radius;
 }
 
 .add-new-list:hover {
-    background-color: #d8d8d8;
+  background-color: #d8d8d8;
 }

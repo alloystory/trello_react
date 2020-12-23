@@ -140,11 +140,26 @@ class Board extends Component {
     }));
   };
 
+  handleChangeListName = (event) => {
+    const newLists = this.state.lists.map((list) => {
+      if (list.id == event.target.name)
+        return { ...list, title: event.target.value };
+      else return list;
+    });
+    this.setState(() => ({
+      lists: newLists,
+    }));
+  };
+
   render() {
     return (
       <div className="board">
         {this.state.lists.map((list) => (
-          <List key={list.id} data={list} />
+          <List
+            key={list.id}
+            data={list}
+            onChangeListName={this.handleChangeListName}
+          />
         ))}
         <div className="list-wrapper">
           <a href="#" className="add-new-list" onClick={this.handleAddList}>
