@@ -1,8 +1,46 @@
-import React, { Component } from 'react';
-import List from './List'
+import React, { Component } from "react";
+import List from "./List";
+import { nanoid } from "nanoid";
 
 class Board extends Component {
   state = {
+    // lists: [
+    //   {
+    //     title: "List 1",
+    //     cards: [
+    //       { content: "Some Card Content" },
+    //       { content: "More content" },
+    //       { content: "A very looooooooooooooooooooooooooooooooong content" },
+    //     ],
+    //   },
+    //   {
+    //     title: "List 2",
+    //     cards: [
+    //       { content: "Some Card Content" },
+    //       { content: "A very looooooooooooooooooooooooooooooooong content" },
+    //     ],
+    //   },
+    //   {
+    //     title: "List 3",
+    //     cards: [
+    //       { content: "More content" },
+    //       { content: "A very looooooooooooooooooooooooooooooooong content" },
+    //     ],
+    //   },
+    //   {
+    //     title: "List 4",
+    //     cards: [{ content: "Some Card Content" }, { content: "More content" }],
+    //   },
+    //   {
+    //     title: "List 5",
+    //     cards: [
+    //       { content: "Some Card Content" },
+    //       { content: "More content" },
+    //       { content: "A very looooooooooooooooooooooooooooooooong content" },
+    //       { content: "A very HAHHAHAHAA content" },
+    //     ],
+    //   },
+    // ],
     lists: [
       {
         id: 1,
@@ -10,17 +48,17 @@ class Board extends Component {
         cards: [
           {
             id: 1,
-            content: "Some Card Content"
+            content: "Some Card Content",
           },
           {
             id: 2,
-            content: "More content"
+            content: "More content",
           },
           {
             id: 3,
-            content: "A very looooooooooooooooooooooooooooooooong content"
-          }
-        ]
+            content: "A very looooooooooooooooooooooooooooooooong content",
+          },
+        ],
       },
       {
         id: 2,
@@ -28,13 +66,13 @@ class Board extends Component {
         cards: [
           {
             id: 1,
-            content: "Some Card Content"
+            content: "Some Card Content",
           },
           {
             id: 2,
-            content: "A very looooooooooooooooooooooooooooooooong content"
-          }
-        ]
+            content: "A very looooooooooooooooooooooooooooooooong content",
+          },
+        ],
       },
       {
         id: 3,
@@ -42,13 +80,13 @@ class Board extends Component {
         cards: [
           {
             id: 1,
-            content: "More content"
+            content: "More content",
           },
           {
             id: 2,
-            content: "A very looooooooooooooooooooooooooooooooong content"
-          }
-        ]
+            content: "A very looooooooooooooooooooooooooooooooong content",
+          },
+        ],
       },
       {
         id: 4,
@@ -56,13 +94,13 @@ class Board extends Component {
         cards: [
           {
             id: 1,
-            content: "Some Card Content"
+            content: "Some Card Content",
           },
           {
             id: 2,
-            content: "More content"
-          }
-        ]
+            content: "More content",
+          },
+        ],
       },
       {
         id: 5,
@@ -70,39 +108,48 @@ class Board extends Component {
         cards: [
           {
             id: 1,
-            content: "Some Card Content"
+            content: "Some Card Content",
           },
           {
             id: 2,
-            content: "More content"
+            content: "More content",
           },
           {
             id: 3,
-            content: "A very looooooooooooooooooooooooooooooooong content"
+            content: "A very looooooooooooooooooooooooooooooooong content",
           },
           {
             id: 4,
-            content: "A very HAHHAHAHAA content"
-          }
-        ]
-      }
-    ]
-  }
+            content: "A very HAHHAHAHAA content",
+          },
+        ],
+      },
+    ],
+  };
+
+  handleAddList = () => {
+    this.setState((state) => ({
+      lists: [
+        ...state.lists,
+        {
+          id: nanoid(),
+          title: "somelist",
+          cards: [],
+        },
+      ],
+    }));
+  };
 
   render() {
-    const listItems = this.state.lists.map(list =>
-      <List
-        key={list.id}
-        title={list.title}
-        cards={list.cards} 
-      />
-    )
-
     return (
       <div className="board">
-        {listItems}
+        {this.state.lists.map((list) => (
+          <List key={list.id} data={list} />
+        ))}
         <div className="list-wrapper">
-          <a href="#" className="add-new-list">Add list</a>
+          <a href="#" className="add-new-list" onClick={this.handleAddList}>
+            Add list
+          </a>
         </div>
       </div>
     );
