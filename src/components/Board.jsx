@@ -47,50 +47,67 @@ class Board extends Component {
   }
 
   handleAddList = () => {
-    this.setState((state) => ({
-      lists: [
-        ...state.lists,
-        {
-          id: nanoid(),
-          title: "somelist",
-          cards: [],
-        },
-      ],
-    }));
+    this.setState((state) => {
+      return {
+        lists: [
+          ...state.lists,
+          {
+            id: nanoid(),
+            title: "somelist",
+            cards: [],
+          },
+        ],
+      };
+    });
+  };
+
+  handleDeleteList = (listId) => () => {
+    this.setState((state) => {
+      return { lists: state.lists.filter((list) => list.id !== listId) };
+    });
   };
 
   handleChangeListName = (listId) => (event) => {
-    this.setState((state) => ({
-      lists: state.lists.map((list) =>
-        list.id === listId ? { ...list, title: event.target.value } : list
-      ),
-    }));
+    this.setState((state) => {
+      return {
+        lists: state.lists.map((list) =>
+          list.id === listId ? { ...list, title: event.target.value } : list
+        ),
+      };
+    });
   };
 
   handleAddCard = (listId) => () => {
-    this.setState((state) => ({
-      lists: state.lists.map((list) =>
-        list.id === listId
-          ? {
-              ...list,
-              cards: [...list.cards, { id: nanoid(), content: "somecontent" }],
-            }
-          : list
-      ),
-    }));
+    this.setState((state) => {
+      return {
+        lists: state.lists.map((list) =>
+          list.id === listId
+            ? {
+                ...list,
+                cards: [
+                  ...list.cards,
+                  { id: nanoid(), content: "somecontent" },
+                ],
+              }
+            : list
+        ),
+      };
+    });
   };
 
   handleDeleteCard = (listId) => (cardId) => () => {
-    this.setState((state) => ({
-      lists: state.lists.map((list) =>
-        list.id === listId
-          ? {
-              ...list,
-              cards: list.cards.filter((card) => card.id !== cardId),
-            }
-          : list
-      ),
-    }));
+    this.setState((state) => {
+      return {
+        lists: state.lists.map((list) =>
+          list.id === listId
+            ? {
+                ...list,
+                cards: list.cards.filter((card) => card.id !== cardId),
+              }
+            : list
+        ),
+      };
+    });
   };
 
   render() {
@@ -100,6 +117,7 @@ class Board extends Component {
           <List
             key={list.id}
             data={list}
+            onDeleteList={this.handleDeleteList(list.id)}
             onChangeListName={this.handleChangeListName(list.id)}
             onAddCard={this.handleAddCard(list.id)}
             onDeleteCard={this.handleDeleteCard(list.id)}

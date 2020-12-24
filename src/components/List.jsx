@@ -2,7 +2,7 @@ import React from "react";
 import Card from "./Card";
 
 function List(props) {
-  const { onChangeListName, onAddCard, onDeleteCard } = props;
+  const { onDeleteList, onChangeListName, onAddCard, onDeleteCard } = props;
   const { title, cards } = props.data;
 
   return (
@@ -10,6 +10,7 @@ function List(props) {
       <div className="list">
         <div className="list-header">
           <input type="text" value={title} onChange={onChangeListName} />
+          <button onClick={onDeleteList}>Delete</button>
         </div>
         <div className="list-content">
           {cards.map((card) => (
