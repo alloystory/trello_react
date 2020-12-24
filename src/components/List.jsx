@@ -19,7 +19,12 @@ function List(props) {
           {cards.map((card) => (
             <Card key={card.id} data={card} />
           ))}
-          <a href="#" className="add-new-card">
+          <a
+            href="#"
+            className="add-new-card"
+            name={id}
+            onClick={props.onAddCard}
+          >
             Add card
           </a>
         </div>

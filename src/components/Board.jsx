@@ -58,11 +58,27 @@ class Board extends Component {
   };
 
   handleChangeListName = (event) => {
-    const newLists = this.state.lists.map((list) => {
-      if (list.id == event.target.name)
-        return { ...list, title: event.target.value };
-      else return list;
-    });
+    const newLists = this.state.lists.map((list) =>
+      list.id === event.target.name
+        ? { ...list, title: event.target.value }
+        : list
+    );
+
+    this.setState(() => ({
+      lists: newLists,
+    }));
+  };
+
+  handleAddCard = (event) => {
+    const newLists = this.state.lists.map((list) =>
+      list.id === event.target.name
+        ? {
+            ...list,
+            cards: [...list.cards, { id: nanoid(), content: "somecontent" }],
+          }
+        : list
+    );
+
     this.setState(() => ({
       lists: newLists,
     }));
@@ -76,6 +92,7 @@ class Board extends Component {
             key={list.id}
             data={list}
             onChangeListName={this.handleChangeListName}
+            onAddCard={this.handleAddCard}
           />
         ))}
         <div className="list-wrapper">
