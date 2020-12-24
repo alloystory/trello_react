@@ -41,6 +41,8 @@ class Board extends Component {
       lists.push(newList);
     }
 
+    console.log(lists);
+
     this.setState(() => ({ lists: lists }));
   }
 
@@ -57,30 +59,37 @@ class Board extends Component {
     }));
   };
 
-  handleChangeListName = (event) => {
-    const newLists = this.state.lists.map((list) =>
-      list.id === event.target.name
-        ? { ...list, title: event.target.value }
-        : list
-    );
-
-    this.setState(() => ({
-      lists: newLists,
+  handleChangeListName = (listId) => (event) => {
+    this.setState((state) => ({
+      lists: state.lists.map((list) =>
+        list.id === listId ? { ...list, title: event.target.value } : list
+      ),
     }));
   };
 
-  handleAddCard = (event) => {
-    const newLists = this.state.lists.map((list) =>
-      list.id === event.target.name
-        ? {
-            ...list,
-            cards: [...list.cards, { id: nanoid(), content: "somecontent" }],
-          }
-        : list
-    );
+  handleAddCard = (listId) => () => {
+    this.setState((state) => ({
+      lists: state.lists.map((list) =>
+        list.id === listId
+          ? {
+              ...list,
+              cards: [...list.cards, { id: nanoid(), content: "somecontent" }],
+            }
+          : list
+      ),
+    }));
+  };
 
-    this.setState(() => ({
-      lists: newLists,
+  handleDeleteCard = (listId) => (cardId) => () => {
+    this.setState((state) => ({
+      lists: state.lists.map((list) =>
+        list.id === listId
+          ? {
+              ...list,
+              cards: list.cards.filter((card) => card.id !== cardId),
+            }
+          : list
+      ),
     }));
   };
 
@@ -91,8 +100,9 @@ class Board extends Component {
           <List
             key={list.id}
             data={list}
-            onChangeListName={this.handleChangeListName}
-            onAddCard={this.handleAddCard}
+            onChangeListName={this.handleChangeListName(list.id)}
+            onAddCard={this.handleAddCard(list.id)}
+            onDeleteCard={this.handleDeleteCard(list.id)}
           />
         ))}
         <div className="list-wrapper">
