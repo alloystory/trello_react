@@ -5,9 +5,13 @@ function Card(props) {
   const { content } = props.data;
 
   return (
-    <a className="card" href="#" onClick={onDeleteCard}>
-      <div className="card-content">{content}</div>
-      <div className="card-status">{/* Todo */}</div>
+    <a className="card" href="#">
+      <div className="card-body">
+        <div className="card-content">{content}</div>
+        <div className="card-actions">
+          <button onClick={onDeleteCard}>Delete</button>
+        </div>
+      </div>
     </a>
   );
 }
