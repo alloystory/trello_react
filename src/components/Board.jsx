@@ -41,6 +41,7 @@ class Board extends Component {
   };
 
   componentDidMount() {
+    // Grab data from backend
     const lists = [];
 
     for (const list of SEED_DATA) {
@@ -123,6 +124,25 @@ class Board extends Component {
     });
   };
 
+  handleEditCard = (listId) => (cardId) => (event) => {
+    this.setState((state) => {
+      return {
+        lists: state.lists.map((list) =>
+          list.id === listId
+            ? {
+                ...list,
+                cards: list.cards.map((card) =>
+                  card.id === cardId
+                    ? { ...card, content: event.target.value }
+                    : card
+                ),
+              }
+            : list
+        ),
+      };
+    });
+  };
+
   render() {
     return (
       <div className="board">
@@ -134,6 +154,7 @@ class Board extends Component {
             onChangeListName={this.handleChangeListName(list.id)}
             onAddCard={this.handleAddCard(list.id)}
             onDeleteCard={this.handleDeleteCard(list.id)}
+            onEditCard={this.handleEditCard(list.id)}
           />
         ))}
         <div className="list-wrapper">

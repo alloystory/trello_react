@@ -2,7 +2,13 @@ import React from "react";
 import Card from "./Card";
 
 function List(props) {
-  const { onDeleteList, onChangeListName, onAddCard, onDeleteCard } = props;
+  const {
+    onDeleteList,
+    onChangeListName,
+    onAddCard,
+    onDeleteCard,
+    onEditCard,
+  } = props;
   const { title, cards } = props.data;
 
   return (
@@ -18,6 +24,7 @@ function List(props) {
               key={card.id}
               data={card}
               onDeleteCard={onDeleteCard(card.id)}
+              onEditCard={onEditCard(card.id)}
             />
           ))}
           <a href="#" className="add-new-card" onClick={onAddCard}>

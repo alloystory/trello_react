@@ -68,7 +68,17 @@ a {
 }
 
 .card-content {
-  word-wrap: break-word;
+  background-color: transparent;
+  border: none;
+  font: inherit;
+  resize: none;
+  width: 100%;
+  height: inherit;
+  overflow-y: hidden;
+}
+
+.card-content:focus {
+  background-color: #ffffff;
 }
 
 .add-new-card {
