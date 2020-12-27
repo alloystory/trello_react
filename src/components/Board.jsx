@@ -22,6 +22,19 @@ const SEED_DATA = [
   },
 ];
 
+// lists: [
+//   {
+//     id: 1,
+//     title: "some list",
+//     cards: [
+//       {
+//         id: 1,
+//         content: "some content",
+//       },
+//     ],
+//   },
+// ];
+
 class Board extends Component {
   state = {
     lists: [],
