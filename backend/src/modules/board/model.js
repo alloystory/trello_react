@@ -2,18 +2,14 @@ import mongoose from "mongoose";
 
 const schema = new mongoose.Schema(
   {
-    lists: [
+    title: { type: String, required: true },
+    cards: [
       {
-        title: { type: String, required: true },
-        cards: [
-          {
-            content: { type: String, required: true },
-          },
-        ],
+        content: { type: String, required: true },
       },
     ],
   },
-  { timestamps: true, collection: "boards" }
+  { timestamps: true, collection: "lists" }
 );
 
-export default mongoose.model("Board", schema);
+export default mongoose.model("List", schema);
