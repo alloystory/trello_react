@@ -7,7 +7,9 @@ const mongoPass = "example";
 const mongoHost = "localhost:27017";
 const mongoDb = "test";
 const dbUri = `mongodb://${mongoUser}:${mongoPass}@${mongoHost}/${mongoDb}?authSource=admin`;
-mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose
+  .connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .catch((e) => console.log(e));
 
 const port = 5000;
 const app = express();
