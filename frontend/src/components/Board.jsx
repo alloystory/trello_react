@@ -24,11 +24,11 @@ const SEED_DATA = [
 
 // lists: [
 //   {
-//     id: 1,
+//     _id: 1,
 //     title: "some list",
 //     cards: [
 //       {
-//         id: 1,
+//         _id: 1,
 //         content: "some content",
 //       },
 //     ],
@@ -43,10 +43,10 @@ function Board(props) {
     const lists = [];
 
     for (const list of SEED_DATA) {
-      const newList = { id: nanoid(), title: list.title, cards: [] };
+      const newList = { _id: nanoid(), title: list.title, cards: [] };
       for (const card of list.cards) {
         newList.cards.push({
-          id: nanoid(),
+          _id: nanoid(),
           content: card,
         });
       }
@@ -60,7 +60,7 @@ function Board(props) {
     setLists([
       ...lists,
       {
-        id: nanoid(),
+        _id: nanoid(),
         title: "some list",
         cards: [],
       },
@@ -68,73 +68,15 @@ function Board(props) {
   };
 
   const handleDeleteList = (listId) => () =>
-    setLists(lists.filter((list) => list.id !== listId));
-
-  const handleChangeListName = (listId) => (event) => {
-    event.preventDefault();
-    setLists(
-      lists.map((list) =>
-        list.id === listId ? { ...list, title: event.target.value } : list
-      )
-    );
-  };
-
-  const handleAddCard = (listId) => () => {
-    setLists(
-      lists.map((list) =>
-        list.id === listId
-          ? {
-              ...list,
-              cards: [...list.cards, { id: nanoid(), content: "somecontent" }],
-            }
-          : list
-      )
-    );
-  };
-
-  const handleDeleteCard = (listId) => (cardId) => () => {
-    setLists(
-      lists.map((list) =>
-        list.id === listId
-          ? {
-              ...list,
-              cards: list.cards.filter((card) => card.id !== cardId),
-            }
-          : list
-      )
-    );
-  };
-
-  const handleEditCard = (listId) => (cardId) => (event) => {
-    event.preventDefault();
-
-    setLists(
-      lists.map((list) =>
-        list.id === listId
-          ? {
-              ...list,
-              cards: list.cards.map((card) =>
-                card.id === cardId
-                  ? { ...card, content: event.target.value }
-                  : card
-              ),
-            }
-          : list
-      )
-    );
-  };
+    setLists(lists.filter((list) => list._id !== listId));
 
   return (
     <div className="board">
       {lists.map((list) => (
         <List
-          key={list.id}
+          key={list._id}
           data={list}
-          onDeleteList={handleDeleteList(list.id)}
-          onChangeListName={handleChangeListName(list.id)}
-          onAddCard={handleAddCard(list.id)}
-          onDeleteCard={handleDeleteCard(list.id)}
-          onEditCard={handleEditCard(list.id)}
+          onDeleteList={handleDeleteList(list._id)}
         />
       ))}
       <div className="list-wrapper">

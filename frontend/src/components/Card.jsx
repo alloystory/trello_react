@@ -1,23 +1,23 @@
-import React from "react";
+import { useEffect, useState } from "react";
 
-function Card(props) {
-  const { onDeleteCard, onEditCard } = props;
-  const { content } = props.data;
+function Card({ data, onDeleteCard }) {
+  const [content, setContent] = useState("");
+
+  useEffect(() => {
+    setContent(data.content);
+  }, []);
+
+  const handleEditCard = (event) => {
+    event.preventDefault();
+    setContent(event.target.value);
+  };
 
   return (
     <a className="card" href="#">
       <div className="card-body">
-        {/* <span
-          className="card-content"
-          contentEditable={true}
-          onChange={onEditCard}
-        >
-          {content}
-        </span> */}
         <textarea
           className="card-content"
-          // rows="1"
-          onChange={onEditCard}
+          onChange={handleEditCard}
           onInput={(event) => {
             event.target.style.height = "inherit";
             event.target.style.height = `${event.target.scrollHeight}px`;
