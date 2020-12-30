@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { useEffect, useState } from "react";
 import List from "./List";
 import { nanoid } from "nanoid";
 
@@ -35,12 +35,10 @@ const SEED_DATA = [
 //   },
 // ];
 
-class Board extends Component {
-  state = {
-    lists: [],
-  };
+function Board(props) {
+  const [lists, setLists] = useState([]);
 
-  componentDidMount() {
+  useEffect(() => {
     // Grab data from backend
     const lists = [];
 
@@ -55,116 +53,97 @@ class Board extends Component {
       lists.push(newList);
     }
 
-    console.log(lists);
+    setLists(lists);
+  }, []);
 
-    this.setState(() => ({ lists: lists }));
-  }
-
-  handleAddList = () => {
-    this.setState((state) => {
-      return {
-        lists: [
-          ...state.lists,
-          {
-            id: nanoid(),
-            title: "somelist",
-            cards: [],
-          },
-        ],
-      };
-    });
+  const handleAddList = () => {
+    setLists([
+      ...lists,
+      {
+        id: nanoid(),
+        title: "some list",
+        cards: [],
+      },
+    ]);
   };
 
-  handleDeleteList = (listId) => () => {
-    this.setState((state) => {
-      return { lists: state.lists.filter((list) => list.id !== listId) };
-    });
-  };
+  const handleDeleteList = (listId) => () =>
+    setLists(lists.filter((list) => list.id !== listId));
 
-  handleChangeListName = (listId) => (event) => {
-    this.setState((state) => {
-      return {
-        lists: state.lists.map((list) =>
-          list.id === listId ? { ...list, title: event.target.value } : list
-        ),
-      };
-    });
-  };
-
-  handleAddCard = (listId) => () => {
-    this.setState((state) => {
-      return {
-        lists: state.lists.map((list) =>
-          list.id === listId
-            ? {
-                ...list,
-                cards: [
-                  ...list.cards,
-                  { id: nanoid(), content: "somecontent" },
-                ],
-              }
-            : list
-        ),
-      };
-    });
-  };
-
-  handleDeleteCard = (listId) => (cardId) => () => {
-    this.setState((state) => {
-      return {
-        lists: state.lists.map((list) =>
-          list.id === listId
-            ? {
-                ...list,
-                cards: list.cards.filter((card) => card.id !== cardId),
-              }
-            : list
-        ),
-      };
-    });
-  };
-
-  handleEditCard = (listId) => (cardId) => (event) => {
-    this.setState((state) => {
-      return {
-        lists: state.lists.map((list) =>
-          list.id === listId
-            ? {
-                ...list,
-                cards: list.cards.map((card) =>
-                  card.id === cardId
-                    ? { ...card, content: event.target.value }
-                    : card
-                ),
-              }
-            : list
-        ),
-      };
-    });
-  };
-
-  render() {
-    return (
-      <div className="board">
-        {this.state.lists.map((list) => (
-          <List
-            key={list.id}
-            data={list}
-            onDeleteList={this.handleDeleteList(list.id)}
-            onChangeListName={this.handleChangeListName(list.id)}
-            onAddCard={this.handleAddCard(list.id)}
-            onDeleteCard={this.handleDeleteCard(list.id)}
-            onEditCard={this.handleEditCard(list.id)}
-          />
-        ))}
-        <div className="list-wrapper">
-          <a href="#" className="add-new-list" onClick={this.handleAddList}>
-            Add list
-          </a>
-        </div>
-      </div>
+  const handleChangeListName = (listId) => (event) => {
+    event.preventDefault();
+    setLists(
+      lists.map((list) =>
+        list.id === listId ? { ...list, title: event.target.value } : list
+      )
     );
-  }
+  };
+
+  const handleAddCard = (listId) => () => {
+    setLists(
+      lists.map((list) =>
+        list.id === listId
+          ? {
+              ...list,
+              cards: [...list.cards, { id: nanoid(), content: "somecontent" }],
+            }
+          : list
+      )
+    );
+  };
+
+  const handleDeleteCard = (listId) => (cardId) => () => {
+    setLists(
+      lists.map((list) =>
+        list.id === listId
+          ? {
+              ...list,
+              cards: list.cards.filter((card) => card.id !== cardId),
+            }
+          : list
+      )
+    );
+  };
+
+  const handleEditCard = (listId) => (cardId) => (event) => {
+    event.preventDefault();
+
+    setLists(
+      lists.map((list) =>
+        list.id === listId
+          ? {
+              ...list,
+              cards: list.cards.map((card) =>
+                card.id === cardId
+                  ? { ...card, content: event.target.value }
+                  : card
+              ),
+            }
+          : list
+      )
+    );
+  };
+
+  return (
+    <div className="board">
+      {lists.map((list) => (
+        <List
+          key={list.id}
+          data={list}
+          onDeleteList={handleDeleteList(list.id)}
+          onChangeListName={handleChangeListName(list.id)}
+          onAddCard={handleAddCard(list.id)}
+          onDeleteCard={handleDeleteCard(list.id)}
+          onEditCard={handleEditCard(list.id)}
+        />
+      ))}
+      <div className="list-wrapper">
+        <a href="#" className="add-new-list" onClick={handleAddList}>
+          Add list
+        </a>
+      </div>
+    </div>
+  );
 }
 
 export default Board;
