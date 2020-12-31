@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Card from "./Card";
+import CardEdit from "./CardEdit";
 import { nanoid } from "nanoid";
 
 function List({ data, onDeleteList }) {
@@ -26,8 +27,7 @@ function List({ data, onDeleteList }) {
     <div className="list-wrapper">
       <div className="list">
         <div className="list-header">
-          <input type="text" value={title} onChange={handleChangeListName} />
-          <button onClick={onDeleteList}>Delete</button>
+          <a href="#">{title}</a>
         </div>
         <div className="list-content">
           {cards.map((card) => (
@@ -37,6 +37,9 @@ function List({ data, onDeleteList }) {
               onDeleteCard={handleDeleteCard(card._id)}
             />
           ))}
+
+          <CardEdit />
+
           <a href="#" className="add-new-card" onClick={handleAddCard}>
             Add card
           </a>

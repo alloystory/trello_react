@@ -1,0 +1,9 @@
+@import "../global/variables";
+
+.board {
+  flex-grow: 1;
+  display: flex;
+  overflow-x: auto;
+  margin: 0.75rem;
+  border-radius: $border-radius;
+}

@@ -1,0 +1,8 @@
+@import "../global/variables";
+
+.container {
+  height: 100vh;
+  background-color: $color-bg;
+  display: flex;
+  flex-direction: column;
+}

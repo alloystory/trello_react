@@ -79,6 +79,8 @@ function Board(props) {
           onDeleteList={handleDeleteList(list._id)}
         />
       ))}
+
+      {/* Add List Button */}
       <div className="list-wrapper">
         <a href="#" className="add-new-list" onClick={handleAddList}>
           Add list
