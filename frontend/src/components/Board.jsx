@@ -82,7 +82,7 @@ function Board(props) {
 
       {/* Add List Button */}
       <div className="list-wrapper">
-        <a href="#" className="add-new-list" onClick={handleAddList}>
+        <a href="#" className="add-list" onClick={handleAddList}>
           Add list
         </a>
       </div>

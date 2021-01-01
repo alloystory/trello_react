@@ -12,28 +12,37 @@
     border-radius: $border-radius;
 
     .list-header {
-      input {
-        background-color: transparent;
-        border: none;
-        font: inherit;
-        font-weight: bold;
-      }
+      display: flex;
+      justify-content: space-between;
 
-      input:focus {
-        background-color: #ffffff;
+      .list-actions {
+        a {
+          display: inline-flex;
+          width: 1.5rem;
+          height: 1.5rem;
+          justify-content: center;
+          align-items: center;
+          margin: 0 0.15rem;
+          border-radius: $border-radius;
+
+          &:hover {
+            background-color: darken($color-list-bg, 10%);
+          }
+        }
       }
     }
   }
 
-  .add-new-list {
+  .add-list {
     display: block;
     padding: 0.6rem 0.75rem;
-    background-color: rgba(128, 128, 128, 0.5);
-    color: #ffffff;
+    background-color: transparentize($color-list-bg, 0.4);
+    color: $color-font-light;
     border-radius: $border-radius;
-  }
 
-  .add-new-list:hover {
-    background-color: #d8d8d8;
+    &:hover {
+      background-color: $color-list-bg;
+      color: $color-font-dark;
+    }
   }
 }

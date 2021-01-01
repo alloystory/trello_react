@@ -28,7 +28,14 @@ function List({ data, onDeleteList }) {
       <div className="list">
         <div className="list-header">
           <a href="#">{title}</a>
+
+          <div className="list-actions">
+            <a href="#">
+              <i class="far fa-trash-alt"></i>
+            </a>
+          </div>
         </div>
+
         <div className="list-content">
           {cards.map((card) => (
             <Card
