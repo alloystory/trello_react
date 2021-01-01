@@ -30,7 +30,7 @@ function List({ data, onDeleteList }) {
           <a href="#">{title}</a>
 
           <div className="list-actions">
-            <a href="#">
+            <a href="#" onClick={onDeleteList}>
               <i class="far fa-trash-alt"></i>
             </a>
           </div>
