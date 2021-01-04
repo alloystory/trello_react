@@ -14,25 +14,14 @@ function Card({ data, onDeleteCard }) {
 
   return (
     <a className="card" href="#">
-      <div className="card-body">
-        <textarea
-          className="card-content"
-          onChange={handleEditCard}
-          onInput={(event) => {
-            event.target.style.height = "inherit";
-            event.target.style.height = `${event.target.scrollHeight}px`;
-          }}
-          value={content}
-        >
-          {/* {document.querySelectorAll(".card-content").forEach((element) => {
-            element.style.height = "inherit";
-            element.style.height = `${element.scrollHeight}px`;
-          })} */}
-        </textarea>
+      {/* <div className="card-content"> */}
+      <a href="#">{content}</a>
+      {/* </div> */}
 
-        <div className="card-actions">
-          <button onClick={onDeleteCard}>Delete</button>
-        </div>
+      <div className="card-actions">
+        <a href="#" onClick={onDeleteCard}>
+          <i class="far fa-trash-alt"></i>
+        </a>
       </div>
     </a>
   );

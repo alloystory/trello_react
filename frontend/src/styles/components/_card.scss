@@ -1,28 +1,45 @@
+@import "../global/variables";
+
 .card {
   display: block;
+  position: relative;
   margin: 0.75rem 0;
   padding: 0.6rem 0.75rem;
-  background-color: #ffffff;
+  background-color: $color-card-bg;
   border-radius: $border-radius;
-  border-bottom: 1px solid #cfcfcf;
-}
+  border-bottom: 1px solid darken($color-card-bg, 25%);
 
-.card:hover {
-  background-color: #eeeeee;
-}
+  &:hover {
+    background-color: darken($color-card-bg, 5%);
+  }
 
-.card-content {
-  background-color: transparent;
-  border: none;
-  font: inherit;
-  resize: none;
-  width: 100%;
-  height: inherit;
-  overflow-y: hidden;
-}
+  &:hover > .card-actions {
+    display: block;
+  }
 
-.card-content:focus {
-  background-color: #ffffff;
+  .card-actions {
+    display: none;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+
+    a {
+      display: inline-flex;
+      opacity: 0.75;
+      width: 1.5rem;
+      height: 1.5rem;
+      justify-content: center;
+      align-items: center;
+      margin: 0 0.15rem;
+      border-radius: $border-radius;
+      background-color: darken($color-card-bg, 10%);
+
+      &:hover {
+        background-color: darken($color-card-bg, 30%);
+        opacity: 1;
+      }
+    }
+  }
 }
 
 .add-new-card {
