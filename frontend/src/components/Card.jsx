@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, Fragment } from "react";
+import CardOptions from "./CardOptions";
 
 function Card({ data, onDeleteCard }) {
   const [content, setContent] = useState("");
+  const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
     setContent(data.content);
@@ -13,16 +15,14 @@ function Card({ data, onDeleteCard }) {
   };
 
   return (
-    <a className="card" href="#">
-      {/* <div className="card-content"> */}
-      <a href="#">{content}</a>
-      {/* </div> */}
-
-      <div className="card-actions">
-        <a href="#" onClick={onDeleteCard}>
-          <i class="far fa-trash-alt"></i>
-        </a>
-      </div>
+    <a
+      className="card"
+      href="#"
+      onMouseEnter={() => setIsHovering(!isHovering)}
+      onMouseLeave={() => setIsHovering(!isHovering)}
+    >
+      <div className="card-content">{content}</div>
+      {isHovering && <CardOptions onDeleteCard={onDeleteCard} />}
     </a>
   );
 }
