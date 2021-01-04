@@ -27,10 +27,12 @@ function List({ data, onDeleteList }) {
   return (
     <div className="list-wrapper">
       <div className="list">
-        <a href="#" className="list-title">
-          {title}
-        </a>
-        <ListOptions onDeleteList={onDeleteList} />
+        <div className="list-header">
+          <a href="#" className="list-title">
+            {title}
+          </a>
+          <ListOptions onDeleteList={onDeleteList} />
+        </div>
 
         <div className="list-content">
           {cards.map((card) => (
@@ -43,7 +45,7 @@ function List({ data, onDeleteList }) {
 
           <CardEdit />
 
-          <a href="#" className="add-new-card" onClick={handleAddCard}>
+          <a href="#" className="card add-new-card" onClick={handleAddCard}>
             Add card
           </a>
         </div>

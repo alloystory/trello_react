@@ -3,8 +3,8 @@
 .card {
   display: block;
   position: relative;
-  margin: 0.75rem 0;
-  padding: 0.6rem 0.75rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.6rem;
   background-color: $color-card-bg;
   border-radius: $border-radius;
   border-bottom: 1px solid darken($color-card-bg, 25%);
@@ -15,12 +15,11 @@
 }
 
 .add-new-card {
-  display: block;
-  padding: 0.6rem 0.75rem;
+  background-color: transparent;
+  border-bottom: none;
   color: #3d3d3d;
-  border-radius: $border-radius;
-}
 
-.add-new-card:hover {
-  background-color: #d8d8d8;
+  &:hover {
+    background-color: darken($color-list-bg, 10%);
+  }
 }
