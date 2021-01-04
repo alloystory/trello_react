@@ -1,12 +1,15 @@
 @import "~@csstools/normalize.css/normalize.css";
 
+*,
+*:before,
+*:after {
+  line-height: normal;
+  box-sizing: border-box;
+}
+
 body {
   padding: 0;
   margin: 0;
-}
-
-* {
-  line-height: normal;
 }
 
 ul {
