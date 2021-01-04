@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import ListOptions from "./ListOptions";
 import Card from "./Card";
 import CardEdit from "./CardEdit";
 import { nanoid } from "nanoid";
@@ -26,15 +27,10 @@ function List({ data, onDeleteList }) {
   return (
     <div className="list-wrapper">
       <div className="list">
-        <div className="list-header">
-          <a href="#">{title}</a>
-
-          <div className="list-actions">
-            <a href="#" onClick={onDeleteList}>
-              <i class="far fa-trash-alt"></i>
-            </a>
-          </div>
-        </div>
+        <a href="#" className="list-title">
+          {title}
+        </a>
+        <ListOptions onDeleteList={onDeleteList} />
 
         <div className="list-content">
           {cards.map((card) => (

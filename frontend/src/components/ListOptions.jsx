@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-function CardOptions(props) {
-  const { onDeleteCard } = props;
+function ListOptions(props) {
+  const { onDeleteList } = props;
   const [showOptions, setShowOptions] = useState(false);
 
   return (
@@ -16,8 +16,8 @@ function CardOptions(props) {
 
       {showOptions && (
         <ul>
-          <li className="more-option" onClick={onDeleteCard}>
-            Delete Card
+          <li className="more-option" onClick={onDeleteList}>
+            Delete List
           </li>
         </ul>
       )}
@@ -25,4 +25,4 @@ function CardOptions(props) {
   );
 }
 
-export default CardOptions;
+export default ListOptions;

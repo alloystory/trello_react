@@ -4,8 +4,9 @@
 @import "global/vendors";
 
 // Components
-@import "components/container";
+@import "components/root";
 @import "components/board";
 @import "components/list";
 @import "components/card";
 @import "components/scrollbar";
+@import "components/options";

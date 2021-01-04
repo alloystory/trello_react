@@ -1,49 +1,32 @@
 @import "../global/variables";
 
 .list-wrapper {
-  min-width: 272px;
-  max-width: 272px;
-
+  flex: 0 0 280px;
   margin: 0 0.25rem;
+}
 
-  .list {
-    padding: 0.75rem;
-    background-color: $color-list-bg;
-    border-radius: $border-radius;
+.list {
+  position: relative;
+  padding: 0.5rem;
+  background-color: $color-list-bg;
+  border-radius: $border-radius;
 
-    .list-header {
-      display: flex;
-      justify-content: space-between;
-      font-weight: bold;
-
-      .list-actions {
-        a {
-          display: inline-flex;
-          width: 1.5rem;
-          height: 1.5rem;
-          justify-content: center;
-          align-items: center;
-          margin: 0 0.15rem;
-          border-radius: $border-radius;
-
-          &:hover {
-            background-color: darken($color-list-bg, 10%);
-          }
-        }
-      }
-    }
+  .list-title {
+    display: inline-block;
+    font-weight: bold;
+    margin: 0.25rem 0 0 0.5rem;
   }
+}
 
-  .add-list {
-    display: block;
-    padding: 0.6rem 0.75rem;
-    background-color: transparentize($color-list-bg, 0.4);
-    color: $color-font-light;
-    border-radius: $border-radius;
+.add-list {
+  display: block;
+  padding: 0.6rem 0.75rem;
+  background-color: transparentize($color-list-bg, 0.4);
+  color: $color-font-light;
+  border-radius: $border-radius;
 
-    &:hover {
-      background-color: $color-list-bg;
-      color: $color-font-dark;
-    }
+  &:hover {
+    background-color: $color-list-bg;
+    color: $color-font-dark;
   }
 }

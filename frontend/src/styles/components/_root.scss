@@ -1,0 +1,9 @@
+@import "../global/variables";
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 1.5rem);
+  background-color: $color-bg;
+  padding: 0.75rem;
+}

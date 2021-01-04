@@ -1,10 +1,10 @@
-import Board from './components/Board'
+import Board from "./components/Board";
 
 function App() {
   return (
-    <div className="container">
-      <Board />
-    </div>
+    // <div className="container">
+    <Board />
+    // </div>
   );
 }
 
