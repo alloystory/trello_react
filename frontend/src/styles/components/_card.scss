@@ -1,4 +1,4 @@
-@import "../global/variables";
+@import "../global/vars";
 
 .card {
   display: block;
@@ -22,4 +22,10 @@
   &:hover {
     background-color: darken($color-list-bg, 10%);
   }
+}
+
+.card-editor {
+  width: 100%;
+  resize: none;
+  border: 1px solid black;
 }

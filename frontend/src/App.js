@@ -1,10 +1,12 @@
+import Header from "./components/Header";
 import Board from "./components/Board";
 
 function App() {
   return (
-    // <div className="container">
-    <Board />
-    // </div>
+    <>
+      <Header />
+      <Board />
+    </>
   );
 }
 

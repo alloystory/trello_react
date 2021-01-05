@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+@import "vars";
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.text-heading {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.text-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.text-body {
+  font-size: 16px;
+  color: $color-font-primary;
+}

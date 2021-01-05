@@ -45,9 +45,9 @@ function List({ data, onDeleteList }) {
 
           <CardEdit />
 
-          <a href="#" className="card add-new-card" onClick={handleAddCard}>
+          {/* <a href="#" className="card add-new-card" onClick={handleAddCard}>
             Add card
-          </a>
+          </a> */}
         </div>
       </div>
     </div>

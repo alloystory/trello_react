@@ -1,25 +1,23 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import TextareaAutosize from "react-textarea-autosize";
 
 function CardEdit(props) {
-  return (
-    <a className="card" href="#">
-      <div className="card-body">
-        <textarea className="card-content"></textarea>
-        {/* <textarea
-        className="card-content"
-        onChange={handleEditCard}
-        onInput={(event) => {
-          event.target.style.height = "inherit";
-          event.target.style.height = `${event.target.scrollHeight}px`;
-        }}
-        value={content}
-      ></textarea> */}
+  const [value, setValue] = useState("");
 
-        <div className="card-actions">
-          <button>Delete</button>
-        </div>
+  return (
+    <div className="card-editor-wrapper">
+      <TextareaAutosize
+        minRows={2}
+        value={value}
+        onChange={(event) => setValue(event.target.value)}
+        className="card card-editor"
+      />
+
+      <div className="card-editor-actions">
+        <button>Save</button>
+        <button>Cancel</button>
       </div>
-    </a>
+    </div>
   );
 }
 
