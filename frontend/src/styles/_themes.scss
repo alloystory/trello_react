@@ -3,19 +3,30 @@
 
 body {
   font-family: "Open Sans", sans-serif;
+  background-color: $color-bg;
 }
 
 .text-heading {
   font-size: 24px;
   font-weight: 600;
+  color: $color-font-primary;
 }
 
 .text-title {
   font-size: 16px;
   font-weight: 600;
+  color: $color-font-primary;
+  color: $color-font-primary;
 }
 
 .text-body {
   font-size: 16px;
   color: $color-font-primary;
+}
+
+.btn {
+  padding: 6px 16px;
+  background-color: $color-primary;
+  border: none;
+  border-radius: 2px;
 }

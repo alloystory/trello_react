@@ -1,0 +1,27 @@
+@import "../vars";
+
+.header {
+  display: flex;
+  padding: 20px 40px;
+  background-color: #fff;
+  justify-content: space-between;
+
+  &--section {
+    display: flex;
+
+    &-item {
+      margin: 0 16px;
+    }
+  }
+
+  &--search {
+    background-color: $color-primary;
+    border: none;
+    border-radius: 2px;
+    padding: 6px 16px;
+
+    &::placeholder {
+      font-style: italic;
+    }
+  }
+}

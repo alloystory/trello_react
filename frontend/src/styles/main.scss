@@ -1,6 +1,9 @@
 // Global
-@import "global/base";
-@import "global/fonts";
+@import "base";
+@import "themes";
+
+// Modules
+@import "modules/header";
 
 // Components
 // @import "components/root";

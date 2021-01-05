@@ -1,15 +1,19 @@
 function Header(props) {
   return (
-    <header>
-      <div className="left">
-        <h1 className="header__title">Board Title</h1>
-        <button>Boards</button>
+    <div className="header">
+      <div className="header--section">
+        <h1 className="header--section-item text-heading">Board Title</h1>
+        <button className="header--section-item btn">Boards</button>
       </div>
-      <div className="right">
-        <input type="text" className="header__search" />
-        <button>Logout</button>
+      <div className="header--section">
+        <input
+          type="text"
+          className="header--section-item header--search"
+          placeholder="Search..."
+        />
+        <button className="header--section-item btn">Logout</button>
       </div>
-    </header>
+    </div>
   );
 }
 
