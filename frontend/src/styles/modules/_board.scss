@@ -1,10 +1,10 @@
 .board {
   display: flex;
-  margin: 16px;
+  margin: 24px;
 
   &--list-wrap {
     flex: 0 0 280px;
-    margin-right: 16px;
+    margin-right: 24px;
   }
 
   &--list-wrap:last-child {

@@ -1,5 +1,17 @@
 @import "../vars";
 
 .list {
-  background-color: $color-list-bg;
+  background-color: #ffffff;
+  padding: 24px 16px;
+  border-radius: 4px;
+
+  &--header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &--content {
+    margin-top: 12px;
+  }
 }

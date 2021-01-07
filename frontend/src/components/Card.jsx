@@ -15,15 +15,14 @@ function Card({ data, onDeleteCard }) {
   };
 
   return (
-    <a
+    <button
       className="card"
-      href="#"
       onMouseEnter={() => setIsHovering(!isHovering)}
       onMouseLeave={() => setIsHovering(!isHovering)}
     >
       <div className="card-content">{content}</div>
       {isHovering && <CardOptions onDeleteCard={onDeleteCard} />}
-    </a>
+    </button>
   );
 }
 

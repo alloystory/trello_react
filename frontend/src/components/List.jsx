@@ -28,7 +28,7 @@ function List({ data, onDeleteList }) {
     <div className="board--list-wrap">
       <div className="list">
         <div className="list--header">
-          <a href="#" className="list--title">
+          <a href="#" className="text-title">
             {title}
           </a>
           <ListOptions onDeleteList={onDeleteList} />
