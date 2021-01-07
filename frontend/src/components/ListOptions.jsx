@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ReactComponent as EllipsisIcon } from "../assets/more.svg";
 
 function ListOptions(props) {
   const { onDeleteList } = props;
@@ -11,7 +12,7 @@ function ListOptions(props) {
         onClick={() => setShowOptions(!showOptions)}
         className="btn-show-option"
       >
-        <i class="fas fa-ellipsis-h"></i>
+        <EllipsisIcon />
       </a>
 
       {showOptions && (

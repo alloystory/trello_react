@@ -24,14 +24,22 @@
   }
 
   &--btn {
+    display: flex;
     width: 34px;
     height: 34px;
     padding: 0;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
     margin-right: 32px;
 
     &:last-child {
       margin-right: 0;
     }
+  }
+
+  &--theme-icon {
+    fill: $color-font-secondary;
+    height: 21px;
+    width: 21px;
   }
 }

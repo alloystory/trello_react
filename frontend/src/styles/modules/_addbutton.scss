@@ -13,4 +13,10 @@
     border-color: $color-item-active;
     cursor: pointer;
   }
+
+  svg {
+    fill: $color-font-primary;
+    height: 12px;
+    width: 12px;
+  }
 }

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ReactComponent as EllipsisIcon } from "../assets/more.svg";
 
 function CardOptions(props) {
   const { onDeleteCard } = props;
@@ -11,7 +12,7 @@ function CardOptions(props) {
         onClick={() => setShowOptions(!showOptions)}
         className="btn-show-option"
       >
-        <i class="fas fa-ellipsis-h"></i>
+        <EllipsisIcon />
       </a>
 
       {showOptions && (
