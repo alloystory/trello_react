@@ -14,6 +14,7 @@
     padding: 6px 16px;
 
     &::placeholder {
+      color: $color-item-inactive;
       font-style: italic;
     }
   }
@@ -23,8 +24,8 @@
   }
 
   &--btn {
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
     padding: 0;
     text-align: center;
     margin-right: 32px;
