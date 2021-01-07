@@ -25,16 +25,16 @@ function List({ data, onDeleteList }) {
     setCards(cards.filter((card) => card._id !== cardId));
 
   return (
-    <div className="list-wrapper">
+    <div className="board--list-wrap">
       <div className="list">
-        <div className="list-header">
-          <a href="#" className="list-title">
+        <div className="list--header">
+          <a href="#" className="list--title">
             {title}
           </a>
           <ListOptions onDeleteList={onDeleteList} />
         </div>
 
-        <div className="list-content">
+        <div className="list--content">
           {cards.map((card) => (
             <Card
               key={card._id}

@@ -1,0 +1,36 @@
+@import "../vars";
+
+.header {
+  display: flex;
+  padding: 16px 48px;
+  background-color: #fff;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px $color-shadow;
+
+  &--search {
+    border: 1px solid $color-item-inactive;
+    border-radius: 4px;
+    width: 480px;
+    padding: 6px 16px;
+
+    &::placeholder {
+      font-style: italic;
+    }
+  }
+
+  &--btns {
+    display: flex;
+  }
+
+  &--btn {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    text-align: center;
+    margin-right: 32px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

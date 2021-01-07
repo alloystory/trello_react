@@ -7,12 +7,14 @@ body {
 }
 
 .text-heading {
+  margin: 0;
   font-size: 24px;
   font-weight: 600;
   color: $color-font-primary;
 }
 
 .text-title {
+  margin: 0;
   font-size: 16px;
   font-weight: 600;
   color: $color-font-primary;
@@ -20,13 +22,19 @@ body {
 }
 
 .text-body {
+  margin: 0;
   font-size: 16px;
   color: $color-font-primary;
 }
 
 .btn {
   padding: 6px 16px;
-  background-color: $color-primary;
+  background-color: $color-secondary;
   border: none;
-  border-radius: 2px;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.btn:hover {
+  cursor: pointer;
 }
