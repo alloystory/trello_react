@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import List from "./List";
+import AddButton from "./AddButton";
 import { nanoid } from "nanoid";
 
 const SEED_DATA = [
@@ -81,10 +82,8 @@ function Board(props) {
       ))}
 
       {/* Add List Button */}
-      <div className="list-wrapper">
-        <a href="#" className="add-list" onClick={handleAddList}>
-          Add list
-        </a>
+      <div className="board--list-wrap">
+        <AddButton />
       </div>
     </div>
   );

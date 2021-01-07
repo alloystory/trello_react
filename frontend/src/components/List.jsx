@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import ListOptions from "./ListOptions";
 import Card from "./Card";
 import CardEdit from "./CardEdit";
+import AddButton from "./AddButton";
 import { nanoid } from "nanoid";
 
 function List({ data, onDeleteList }) {
@@ -43,11 +44,9 @@ function List({ data, onDeleteList }) {
             />
           ))}
 
-          <CardEdit />
+          {/* <CardEdit /> */}
 
-          {/* <a href="#" className="card add-new-card" onClick={handleAddCard}>
-            Add card
-          </a> */}
+          <AddButton />
         </div>
       </div>
     </div>
