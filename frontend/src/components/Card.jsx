@@ -21,7 +21,7 @@ function Card({ data, onDeleteCard }) {
       onMouseLeave={() => setIsHovering(!isHovering)}
     >
       <div className="card--content">{content}</div>
-      {isHovering && <CardOptions onDeleteCard={onDeleteCard} />}
+      {/* {isHovering && <CardOptions onDeleteCard={onDeleteCard} />} */}
     </button>
   );
 }

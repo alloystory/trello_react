@@ -5,7 +5,7 @@
   padding: 16px 48px;
   background-color: #fff;
   justify-content: space-between;
-  box-shadow: 0 2px 8px $color-shadow;
+  box-shadow: $drop-shadow;
 
   &--search {
     border: 1px solid $color-item-inactive;
