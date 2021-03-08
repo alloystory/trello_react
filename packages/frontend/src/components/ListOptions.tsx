@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { ReactComponent as EllipsisIcon } from "../assets/more.svg";
 
-function ListOptions(props) {
+interface Props {
+  onDeleteList: () => void;
+}
+
+function ListOptions(props: Props) {
   const { onDeleteList } = props;
   const [showOptions, setShowOptions] = useState(false);
 

@@ -1,6 +1,6 @@
 import { ReactComponent as SunIcon } from "../assets/sun.svg";
 
-export default function Header(props) {
+export default function Header() {
   return (
     <div className="header">
       <h1 className="text-heading">Board Title</h1>

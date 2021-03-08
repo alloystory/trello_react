@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { useEffect, useState } from "react";
 import List from "./List";
 import AddButton from "./AddButton";
@@ -36,7 +38,7 @@ const SEED_DATA = [
 //   },
 // ];
 
-function Board(props) {
+function Board() {
   const [lists, setLists] = useState([]);
 
   useEffect(() => {

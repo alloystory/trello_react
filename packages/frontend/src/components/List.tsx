@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { useEffect, useState } from "react";
 import ListOptions from "./ListOptions";
 import Card from "./Card";
@@ -5,7 +7,12 @@ import CardEdit from "./CardEdit";
 import AddButton from "./AddButton";
 import { nanoid } from "nanoid";
 
-function List({ data, onDeleteList }) {
+interface Props {
+  data: object;
+  onDeleteList: () => void;
+}
+
+function List({ data, onDeleteList }: Props) {
   const [title, setTitle] = useState("");
   const [cards, setCards] = useState([]);
 
