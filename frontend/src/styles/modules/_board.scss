@@ -1,0 +1,16 @@
+.board {
+  display: flex;
+  margin: 24px;
+  flex-grow: 1;
+  overflow-x: auto;
+  border-radius: 4px;
+
+  &--list-wrap {
+    flex: 0 0 280px;
+    margin-right: 24px;
+  }
+
+  &--list-wrap:last-child {
+    margin-right: 0;
+  }
+}

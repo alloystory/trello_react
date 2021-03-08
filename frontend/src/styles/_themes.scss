@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+@import "vars";
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: $color-bg;
+}
+
+.text-heading {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: $color-font-primary;
+}
+
+.text-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: $color-font-primary;
+  color: $color-font-primary;
+}
+
+.text-body {
+  margin: 0;
+  font-size: 16px;
+  color: $color-font-primary;
+}
+
+.btn {
+  padding: 6px 16px;
+  background-color: $color-secondary;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.btn:hover {
+  cursor: pointer;
+}

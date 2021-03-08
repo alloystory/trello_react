@@ -1,0 +1,28 @@
+@import "~@csstools/normalize.css/normalize.css";
+
+*,
+*:before,
+*:after {
+  font: inherit;
+  line-height: normal;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

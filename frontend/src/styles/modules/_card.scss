@@ -1,0 +1,18 @@
+.card {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 12px 8px;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid $color-item-inactive;
+  text-align: left;
+
+  &:hover {
+    border-color: $color-item-active;
+    cursor: pointer;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
