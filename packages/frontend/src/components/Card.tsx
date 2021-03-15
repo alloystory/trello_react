@@ -1,9 +1,9 @@
 import React, { useEffect, useState, Fragment } from 'react'
 import CardOptions from './CardOptions'
-import { Card } from '../../../backend/types'
+import * as types from '../../../backend/types'
 
 type Props = {
-  data: Card
+  data: types.Card
   onDeleteCard: () => void
 }
 
