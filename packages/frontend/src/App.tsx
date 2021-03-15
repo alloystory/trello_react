@@ -1,14 +1,13 @@
 import React from 'react'
 import Header from './components/Header'
 import Board from './components/Board'
+import styles from './App.module.css'
 
-function App() {
+export default function App() {
   return (
-    <div className="l-main">
+    <div className={styles.layout}>
       <Header />
       <Board />
     </div>
   )
 }
-
-export default App
