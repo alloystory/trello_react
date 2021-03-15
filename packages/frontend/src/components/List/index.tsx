@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import ListOptions from './ListOptions'
-import Card from './Card'
-import CardEdit from './CardEdit'
-import AddButton from './AddButton'
+import ListOptions from '../ListOptions'
+import Card from '../Card'
+import CardEdit from '../CardEdit'
+import AddButton from '../AddButton'
 import { nanoid } from 'nanoid'
 import * as types from '@monorepo/backend/types'
 

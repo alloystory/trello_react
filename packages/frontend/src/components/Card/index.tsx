@@ -1,5 +1,5 @@
 import React, { useEffect, useState, Fragment } from 'react'
-import CardOptions from './CardOptions'
+import CardOptions from '../CardOptions'
 import * as types from '@monorepo/backend/types'
 
 type Props = {

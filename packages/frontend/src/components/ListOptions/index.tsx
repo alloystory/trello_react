@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ReactComponent as EllipsisIcon } from '../assets/more.svg'
+import { ReactComponent as EllipsisIcon } from '../../assets/more.svg'
 
 interface Props {
   onDeleteList: () => void

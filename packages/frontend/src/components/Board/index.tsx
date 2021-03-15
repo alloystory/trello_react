@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import List from './List'
-import AddButton from './AddButton'
+import List from '../List'
+import AddButton from '../AddButton'
 import { nanoid } from 'nanoid'
 import * as types from '@monorepo/backend/types'
 
