@@ -4,6 +4,7 @@
     "packages/*"
   ],
   "scripts": {
+    "postinstall": "husky install",
     "fe": "yarn workspace frontend",
     "be": "yarn workspace backend"
   },
@@ -13,6 +14,8 @@
     "eslint": "^7.22.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-react": "^7.22.0",
+    "husky": "^5.1.3",
+    "lint-staged": "^10.5.4",
     "prettier": "2.2.1",
     "typescript": "^4.2.3"
   }
