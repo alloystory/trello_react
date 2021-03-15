@@ -1,63 +1,13 @@
-// @ts-nocheck
-
 import { useEffect, useState } from 'react'
 import List from './List'
 import AddButton from './AddButton'
 import { nanoid } from 'nanoid'
-
-const SEED_DATA = [
-  {
-    title: 'List 1',
-    cards: ['Content 1', 'Content 2', 'LOOOOOOOOOOOOOOOOOONG Content 3'],
-  },
-  {
-    title: 'List 2',
-    cards: ['Content 1', 'LOOOOOOOOOOOOOOOOOONG Content 3'],
-  },
-  {
-    title: 'List 3',
-    cards: [
-      'Content 1',
-      'Content 2',
-      'LOOOOOOOOOOOOOOOOOONG Content 3',
-      'Some Content 4',
-    ],
-  },
-]
-
-// lists: [
-//   {
-//     _id: 1,
-//     title: "some list",
-//     cards: [
-//       {
-//         _id: 1,
-//         content: "some content",
-//       },
-//     ],
-//   },
-// ];
+import * as types from '../../../backend/types'
 
 function Board() {
-  const [lists, setLists] = useState([])
+  const [lists, setLists] = useState<types.List[]>([])
 
-  useEffect(() => {
-    // Grab data from backend
-    const lists = []
-
-    for (const list of SEED_DATA) {
-      const newList = { _id: nanoid(), title: list.title, cards: [] }
-      for (const card of list.cards) {
-        newList.cards.push({
-          _id: nanoid(),
-          content: card,
-        })
-      }
-      lists.push(newList)
-    }
-
-    setLists(lists)
-  }, [])
+  useEffect(() => setLists(types.sampleData.lists), [])
 
   const handleAddList = () => {
     setLists([
@@ -70,7 +20,7 @@ function Board() {
     ])
   }
 
-  const handleDeleteList = (listId) => () =>
+  const handleDeleteList = (listId: string) => () =>
     setLists(lists.filter((list) => list._id !== listId))
 
   return (

@@ -1,16 +1,17 @@
-// @ts-nocheck
-
 import { useState } from 'react'
 import { ReactComponent as EllipsisIcon } from '../assets/more.svg'
 
-function CardOptions(props) {
-  const { onDeleteCard } = props
+type Props = {
+  onDeleteCard: () => void
+}
+
+function CardOptions({ onDeleteCard }: Props) {
   const [showOptions, setShowOptions] = useState(false)
 
   return (
     <div className="more-options">
       <a
-        href="#"
+        href="/#"
         onClick={() => setShowOptions(!showOptions)}
         className="btn-show-option"
       >

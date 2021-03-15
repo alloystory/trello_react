@@ -1,9 +1,7 @@
-// @ts-nocheck
-
 import { useState } from 'react'
 import TextareaAutosize from 'react-textarea-autosize'
 
-function CardEdit(props) {
+function CardEdit() {
   const [value, setValue] = useState('')
 
   return (

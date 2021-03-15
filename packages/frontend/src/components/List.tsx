@@ -1,27 +1,26 @@
-// @ts-nocheck
-
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ListOptions from './ListOptions'
 import Card from './Card'
 import CardEdit from './CardEdit'
 import AddButton from './AddButton'
 import { nanoid } from 'nanoid'
+import * as types from '../../../backend/types'
 
-interface Props {
-  data: object
+type Props = {
+  data: types.List
   onDeleteList: () => void
 }
 
 function List({ data, onDeleteList }: Props) {
   const [title, setTitle] = useState('')
-  const [cards, setCards] = useState([])
+  const [cards, setCards] = useState<types.Card[]>([])
 
   useEffect(() => {
     setTitle(data.title)
     setCards(data.cards)
   }, [])
 
-  const handleChangeListName = (event) => {
+  const handleChangeListName = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault()
     setTitle(event.target.value)
   }
@@ -29,14 +28,14 @@ function List({ data, onDeleteList }: Props) {
   const handleAddCard = () =>
     setCards([...cards, { _id: nanoid(), content: 'somecontent' }])
 
-  const handleDeleteCard = (cardId) => () =>
+  const handleDeleteCard = (cardId: string) => () =>
     setCards(cards.filter((card) => card._id !== cardId))
 
   return (
     <div className="board--list-wrap">
       <div className="list">
         <div className="list--header">
-          <a href="#" className="text-title">
+          <a href="/#" className="text-title">
             {title}
           </a>
           <ListOptions onDeleteList={onDeleteList} />

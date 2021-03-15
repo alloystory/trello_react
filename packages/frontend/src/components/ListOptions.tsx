@@ -12,7 +12,7 @@ function ListOptions(props: Props) {
   return (
     <div className="more-options">
       <a
-        href="#"
+        href="/#"
         onClick={() => setShowOptions(!showOptions)}
         className="btn-show-option"
       >
