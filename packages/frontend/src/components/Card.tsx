@@ -1,8 +1,13 @@
-// @ts-nocheck
-import { useEffect, useState, Fragment } from 'react'
+import React, { useEffect, useState, Fragment } from 'react'
 import CardOptions from './CardOptions'
+import { Card } from '../../../backend/types'
 
-function Card({ data, onDeleteCard }) {
+type Props = {
+  data: Card
+  onDeleteCard: () => void
+}
+
+function Card({ data, onDeleteCard }: Props) {
   const [content, setContent] = useState('')
   const [isHovering, setIsHovering] = useState(false)
 
@@ -10,7 +15,7 @@ function Card({ data, onDeleteCard }) {
     setContent(data.content)
   }, [])
 
-  const handleEditCard = (event) => {
+  const handleEditCard = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault()
     setContent(event.target.value)
   }
