@@ -1,3 +1,4 @@
+import React from 'react'
 import { ReactComponent as SunIcon } from '../assets/sun.svg'
 
 export default function Header() {

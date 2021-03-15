@@ -4,7 +4,7 @@ import Card from './Card'
 import CardEdit from './CardEdit'
 import AddButton from './AddButton'
 import { nanoid } from 'nanoid'
-import * as types from '../../../backend/types'
+import * as types from '@monorepo/backend/types'
 
 type Props = {
   data: types.List

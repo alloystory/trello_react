@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { ReactComponent as EllipsisIcon } from '../assets/more.svg'
 
 interface Props {

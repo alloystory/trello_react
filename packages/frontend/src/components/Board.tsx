@@ -1,13 +1,72 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import List from './List'
 import AddButton from './AddButton'
 import { nanoid } from 'nanoid'
-import * as types from '../../../backend/types'
+import * as types from '@monorepo/backend/types'
+
+const sampleData: types.GetBoardResponse = {
+  lists: [
+    {
+      _id: 'list-1',
+      title: 'List 1',
+      cards: [
+        {
+          _id: 'list-1-card-1',
+          content: 'content 1',
+        },
+        {
+          _id: 'list-1-card-2',
+          content: 'content 2',
+        },
+        {
+          _id: 'list-1-card-3',
+          content: 'long long long long long long long long long content 3',
+        },
+      ],
+    },
+    {
+      _id: 'list-2',
+      title: 'List 2',
+      cards: [
+        {
+          _id: 'list-2-card-1',
+          content: 'content 1',
+        },
+        {
+          _id: 'list-2-card-3',
+          content: 'long long long long long long long long long content 3',
+        },
+      ],
+    },
+    {
+      _id: 'list-3',
+      title: 'List 3',
+      cards: [
+        {
+          _id: 'list-3-card-1',
+          content: 'content 1',
+        },
+        {
+          _id: 'list-3-card-2',
+          content: 'content 2',
+        },
+        {
+          _id: 'list-3-card-3',
+          content: 'long long long long long long long long long content 3',
+        },
+        {
+          _id: 'list-3-card-4',
+          content: 'long long long long long long long long long content 3',
+        },
+      ],
+    },
+  ],
+}
 
 function Board() {
   const [lists, setLists] = useState<types.List[]>([])
 
-  useEffect(() => setLists(types.sampleData.lists), [])
+  useEffect(() => setLists(sampleData.lists), [])
 
   const handleAddList = () => {
     setLists([
