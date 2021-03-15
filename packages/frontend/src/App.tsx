@@ -1,7 +1,7 @@
 // @ts-nocheck
 
-import Header from "./components/Header";
-import Board from "./components/Board";
+import Header from './components/Header'
+import Board from './components/Board'
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <Header />
       <Board />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

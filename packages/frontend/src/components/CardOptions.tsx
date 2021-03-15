@@ -1,11 +1,11 @@
 // @ts-nocheck
 
-import { useState } from "react";
-import { ReactComponent as EllipsisIcon } from "../assets/more.svg";
+import { useState } from 'react'
+import { ReactComponent as EllipsisIcon } from '../assets/more.svg'
 
 function CardOptions(props) {
-  const { onDeleteCard } = props;
-  const [showOptions, setShowOptions] = useState(false);
+  const { onDeleteCard } = props
+  const [showOptions, setShowOptions] = useState(false)
 
   return (
     <div className="more-options">
@@ -25,7 +25,7 @@ function CardOptions(props) {
         </ul>
       )}
     </div>
-  );
+  )
 }
 
-export default CardOptions;
+export default CardOptions

@@ -1,4 +1,4 @@
-import { ReactComponent as SunIcon } from "../assets/sun.svg";
+import { ReactComponent as SunIcon } from '../assets/sun.svg'
 
 export default function Header() {
   return (
@@ -12,5 +12,5 @@ export default function Header() {
         <button className="btn header--btn">AC</button>
       </div>
     </div>
-  );
+  )
 }

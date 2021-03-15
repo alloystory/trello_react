@@ -1,13 +1,13 @@
-import { useState } from "react";
-import { ReactComponent as EllipsisIcon } from "../assets/more.svg";
+import { useState } from 'react'
+import { ReactComponent as EllipsisIcon } from '../assets/more.svg'
 
 interface Props {
-  onDeleteList: () => void;
+  onDeleteList: () => void
 }
 
 function ListOptions(props: Props) {
-  const { onDeleteList } = props;
-  const [showOptions, setShowOptions] = useState(false);
+  const { onDeleteList } = props
+  const [showOptions, setShowOptions] = useState(false)
 
   return (
     <div className="more-options">
@@ -27,7 +27,7 @@ function ListOptions(props: Props) {
         </ul>
       )}
     </div>
-  );
+  )
 }
 
-export default ListOptions;
+export default ListOptions

@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose'
 
 const schema = new mongoose.Schema(
   {
@@ -9,7 +9,7 @@ const schema = new mongoose.Schema(
       },
     ],
   },
-  { timestamps: true, collection: "lists" }
-);
+  { timestamps: true, collection: 'lists' }
+)
 
-export default mongoose.model("List", schema);
+export default mongoose.model('List', schema)

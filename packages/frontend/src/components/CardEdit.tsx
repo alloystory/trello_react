@@ -1,10 +1,10 @@
 // @ts-nocheck
 
-import { useState } from "react";
-import TextareaAutosize from "react-textarea-autosize";
+import { useState } from 'react'
+import TextareaAutosize from 'react-textarea-autosize'
 
 function CardEdit(props) {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState('')
 
   return (
     <div className="card-editor-wrapper">
@@ -20,7 +20,7 @@ function CardEdit(props) {
         <button>Cancel</button>
       </div>
     </div>
-  );
+  )
 }
 
-export default CardEdit;
+export default CardEdit
