@@ -1,6 +1,6 @@
 import React from 'react'
 import { ReactComponent as SunIcon } from '../../assets/sun.svg'
-import styles from './index.module.scss'
+import styles from './index.module.css'
 
 export default function Header() {
   return (

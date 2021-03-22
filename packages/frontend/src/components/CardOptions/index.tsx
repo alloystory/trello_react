@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { ReactComponent as EllipsisIcon } from '../assets/more.svg'
-import styles from './index.module.scss'
+import styles from './index.module.css'
 
 type Props = {
   onDeleteCard: () => void

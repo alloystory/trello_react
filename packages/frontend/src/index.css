@@ -1,20 +1,4 @@
-::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
-}
-
-::-webkit-scrollbar-track {
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.12);
-  border-radius: 50px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.2);
-}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 
 *,
 *:before,
@@ -41,4 +25,80 @@ li {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+/* Typography */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--color-bg);
+}
+
+.text-heading {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-font-primary);
+}
+
+.text-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-font-primary);
+  color: var(--color-font-primary);
+}
+
+.text-body {
+  margin: 0;
+  font-size: 16px;
+  color: var(--color-font-primary);
+}
+
+.btn {
+  padding: 6px 16px;
+  background-color: var(--color-secondary);
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* Global Variables */
+:root {
+  --color-bg: #e2e6eb;
+
+  --color-primary: #e2e6eb;
+  --color-secondary: #5a646e;
+  --color-item-inactive: #ddd;
+  --color-item-active: #bbb;
+  --color-shadow: #bbb;
+  --color-list-highlight: #707070;
+
+  /* Font Colors */
+  --color-font-primary: #000;
+  --color-font-secondary: #fff;
+
+  --drop-shadow: 0 2px 8px var(--color-shadow);
 }

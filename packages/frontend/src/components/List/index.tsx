@@ -5,8 +5,8 @@ import CardEdit from '../CardEdit'
 import AddButton from '../AddButton'
 import { nanoid } from 'nanoid'
 import * as types from '@monorepo/backend/types'
-import styles from './index.module.scss'
-import boardStyles from '../Board/index.module.scss'
+import styles from './index.module.css'
+import boardStyles from '../Board/index.module.css'
 
 type Props = {
   data: types.List

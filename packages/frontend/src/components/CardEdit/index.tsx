@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import TextareaAutosize from 'react-textarea-autosize'
-import styles from './index.module.scss'
+import styles from './index.module.css'
 
 function CardEdit() {
   const [value, setValue] = useState('')
