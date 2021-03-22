@@ -1,7 +1,7 @@
 import React from 'react'
-import styles from './App.module.scss'
-import Board from './components/Board'
-import Header from './components/Header'
+import Board from '../Board'
+import Header from '../Header'
+import styles from './index.module.scss'
 
 export default function App() {
   return (
