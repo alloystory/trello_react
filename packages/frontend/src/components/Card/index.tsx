@@ -1,6 +1,7 @@
 import React, { useEffect, useState, Fragment } from 'react'
 import CardOptions from '../CardOptions'
 import * as types from '@monorepo/backend/types'
+import styles from './index.module.scss'
 
 type Props = {
   data: types.Card
@@ -22,11 +23,11 @@ function Card({ data, onDeleteCard }: Props) {
 
   return (
     <button
-      className="card"
+      className={styles.card}
       onMouseEnter={() => setIsHovering(!isHovering)}
       onMouseLeave={() => setIsHovering(!isHovering)}
     >
-      <div className="card--content">{content}</div>
+      {/* <div className={styles['card--content']}>{content}</div> */}
       {/* {isHovering && <CardOptions onDeleteCard={onDeleteCard} />} */}
     </button>
   )

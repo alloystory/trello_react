@@ -1,0 +1,9 @@
+export const COLOR = {
+  BACKGROUND: '#FFF',
+  PRIMARY: '#FFF',
+  SECONDARY: '#FFF',
+  ITEM_INACTIVE: '#FFF',
+  ITEM_ACTIVE: '#FFF',
+  SHADOW: '#FFF',
+  LIST_HIGHLIGHT: '#FFF',
+}

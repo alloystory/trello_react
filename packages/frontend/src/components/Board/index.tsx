@@ -3,6 +3,7 @@ import List from '../List'
 import AddButton from '../AddButton'
 import { nanoid } from 'nanoid'
 import * as types from '@monorepo/backend/types'
+import styles from './index.module.scss'
 
 const sampleData: types.GetBoardResponse = {
   lists: [
@@ -83,7 +84,7 @@ function Board() {
     setLists(lists.filter((list) => list._id !== listId))
 
   return (
-    <div className="board">
+    <div className={styles.board}>
       {lists.map((list) => (
         <List
           key={list._id}
@@ -93,7 +94,7 @@ function Board() {
       ))}
 
       {/* Add List Button */}
-      <div className="board--list-wrap">
+      <div className={styles['board--list-wrap']}>
         <AddButton />
       </div>
     </div>
