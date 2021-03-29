@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 
+/* Resets */
 *,
 *:before,
 *:after {
@@ -54,18 +55,6 @@ body {
   color: var(--color-font-primary);
 }
 
-.btn {
-  padding: 6px 16px;
-  background-color: var(--color-secondary);
-  border: none;
-  border-radius: 4px;
-  color: #fff;
-}
-
-.btn:hover {
-  cursor: pointer;
-}
-
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 12px;
@@ -85,6 +74,16 @@ body {
   background: rgba(0, 0, 0, 0.2);
 }
 
+$colors: (
+  'white': #fff,
+  'light-blue': #e2e6eb,
+  'light-gray': #eeeeee,
+  'gray': #d0d0d0,
+  'mid-gray': #8d8d8d,
+  'dark-gray': #707070,
+  'black': #000,
+);
+
 /* Global Variables */
 :root {
   --color-bg: #e2e6eb;
@@ -101,4 +100,6 @@ body {
   --color-font-secondary: #fff;
 
   --drop-shadow: 0 2px 8px var(--color-shadow);
+
+  --border-radius: 8px;
 }
