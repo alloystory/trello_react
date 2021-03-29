@@ -6,7 +6,6 @@ import AddButton from '../AddButton'
 import { nanoid } from 'nanoid'
 import * as types from '@monorepo/backend/types'
 import styles from './index.module.css'
-import boardStyles from '../Board/index.module.css'
 
 type Props = {
   data: types.List
@@ -34,28 +33,26 @@ function List({ data, onDeleteList }: Props) {
     setCards(cards.filter((card) => card._id !== cardId))
 
   return (
-    <div className={boardStyles['board--list-wrap']}>
-      <div className={styles.list}>
-        <div className={styles['list--header']}>
-          <a href="/#" className="text-title">
-            {title}
-          </a>
-          <ListOptions onDeleteList={onDeleteList} />
-        </div>
+    <div className={styles.list}>
+      <div className={styles['list--header']}>
+        <a href="/#" className="text-title">
+          {title}
+        </a>
+        <ListOptions onDeleteList={onDeleteList} />
+      </div>
 
-        <div className={styles['list--content']}>
-          {cards.map((card) => (
-            <Card
-              key={card._id}
-              data={card}
-              onDeleteCard={handleDeleteCard(card._id)}
-            />
-          ))}
+      <div className={styles['list--content']}>
+        {cards.map((card) => (
+          <Card
+            key={card._id}
+            data={card}
+            onDeleteCard={handleDeleteCard(card._id)}
+          />
+        ))}
 
-          {/* <CardEdit /> */}
+        {/* <CardEdit /> */}
 
-          <AddButton />
-        </div>
+        <AddButton />
       </div>
     </div>
   )
