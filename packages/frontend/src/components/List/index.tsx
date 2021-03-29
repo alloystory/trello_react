@@ -12,6 +12,38 @@ type Props = {
   onDeleteList: () => void
 }
 
+function ListHeader({ title }: { title: string }) {
+  return (
+    <div className={styles.listHeader}>
+      <a href="/#" className="text-title">
+        {title}
+      </a>
+    </div>
+  )
+}
+
+function ListContent({
+  cards,
+  handleDeleteCard,
+}: {
+  cards: types.Card[]
+  handleDeleteCard: (cardId: string) => () => void
+}) {
+  return (
+    <div className={styles.listContent}>
+      {cards.map((card) => (
+        <Card
+          key={card._id}
+          data={card}
+          onDeleteCard={handleDeleteCard(card._id)}
+        />
+      ))}
+
+      <AddButton />
+    </div>
+  )
+}
+
 function List({ data, onDeleteList }: Props) {
   const [title, setTitle] = useState('')
   const [cards, setCards] = useState<types.Card[]>([])
@@ -34,26 +66,8 @@ function List({ data, onDeleteList }: Props) {
 
   return (
     <div className={styles.list}>
-      <div className={styles['list--header']}>
-        <a href="/#" className="text-title">
-          {title}
-        </a>
-        <ListOptions onDeleteList={onDeleteList} />
-      </div>
-
-      <div className={styles['list--content']}>
-        {cards.map((card) => (
-          <Card
-            key={card._id}
-            data={card}
-            onDeleteCard={handleDeleteCard(card._id)}
-          />
-        ))}
-
-        {/* <CardEdit /> */}
-
-        <AddButton />
-      </div>
+      <ListHeader title={title} />
+      <ListContent cards={cards} handleDeleteCard={handleDeleteCard} />
     </div>
   )
 }

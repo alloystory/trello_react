@@ -2,16 +2,16 @@
   background-color: #ffffff;
   box-shadow: var(--drop-shadow);
   padding: 24px 16px;
-  border-radius: 4px;
+  border-radius: var(--border-radius);
   border-top: 4px solid var(--color-list-highlight);
 }
 
-.list--header {
+.listHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.list--content {
+.listContent {
   margin-top: 12px;
 }
