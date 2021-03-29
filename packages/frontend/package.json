@@ -1,6 +1,12 @@
 {
   "name": "@monorepo/frontend",
   "version": "0.1.0",
+  "private": true,
+  "workspaces": {
+    "nohoist": [
+      "**react**"
+    ]
+  },
   "dependencies": {
     "@monorepo/backend": "1.0.0",
     "@testing-library/jest-dom": "^5.11.6",
