@@ -1,0 +1,46 @@
+@use '../../index';
+
+.header {
+  display: flex;
+  padding: 16px 48px;
+  background-color: #fff;
+  justify-content: space-between;
+  box-shadow: var(--drop-shadow);
+}
+
+.boardTitle {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-font-primary);
+}
+
+.searchBar {
+  width: 600px;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  padding: 6px 16px;
+
+  &::placeholder {
+    color: var(--color-item-inactive);
+    font-style: italic;
+  }
+}
+
+.rightButtons {
+  display: flex;
+
+  & * {
+    margin-right: 16px;
+  }
+
+  & *:last-child {
+    margin-right: 0;
+  }
+}
+
+.sunIcon {
+  fill: var(--color-font-secondary);
+  height: 21px;
+  width: 21px;
+}
