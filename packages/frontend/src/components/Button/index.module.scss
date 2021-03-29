@@ -1,0 +1,25 @@
+.base {
+  background-color: var(--color-secondary);
+  border-radius: var(--border-radius);
+  border: none;
+  color: #fff;
+  font-size: 16px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.btn {
+  @extend .base;
+  padding: 6px 16px;
+}
+
+.btnSquare {
+  @extend .base;
+  height: 36px;
+  width: 36px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+}
