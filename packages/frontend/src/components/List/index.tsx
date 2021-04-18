@@ -6,6 +6,7 @@ import AddButton from '../AddButton'
 import { nanoid } from 'nanoid'
 import * as types from '@monorepo/backend/types'
 import styles from './index.module.css'
+import { ReactComponent as PlusIcon } from '../../assets/plus.svg'
 
 type Props = {
   data: types.List
@@ -25,9 +26,11 @@ function ListHeader({ title }: { title: string }) {
 function ListContent({
   cards,
   handleDeleteCard,
+  handleAddCard,
 }: {
   cards: types.Card[]
   handleDeleteCard: (cardId: string) => () => void
+  handleAddCard: () => void
 }) {
   return (
     <div className={styles.listContent}>
@@ -39,7 +42,7 @@ function ListContent({
         />
       ))}
 
-      <AddButton />
+      <AddButton onClick={handleAddCard} />
     </div>
   )
 }
@@ -67,7 +70,7 @@ function List({ data, onDeleteList }: Props) {
   return (
     <div className={styles.list}>
       <ListHeader title={title} />
-      <ListContent cards={cards} handleDeleteCard={handleDeleteCard} />
+      <ListContent {...{ cards, handleDeleteCard, handleAddCard }} />
     </div>
   )
 }

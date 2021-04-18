@@ -10,7 +10,6 @@ type Props = {
 
 function Card({ data, onDeleteCard }: Props) {
   const [content, setContent] = useState('')
-  const [isHovering, setIsHovering] = useState(false)
 
   useEffect(() => {
     setContent(data.content)
@@ -21,16 +20,7 @@ function Card({ data, onDeleteCard }: Props) {
     setContent(event.target.value)
   }
 
-  return (
-    <button
-      className={styles.card}
-      onMouseEnter={() => setIsHovering(!isHovering)}
-      onMouseLeave={() => setIsHovering(!isHovering)}
-    >
-      {/* <div className={styles['card--content']}>{content}</div> */}
-      {/* {isHovering && <CardOptions onDeleteCard={onDeleteCard} />} */}
-    </button>
-  )
+  return <button className={styles.card}>{content}</button>
 }
 
 export default Card

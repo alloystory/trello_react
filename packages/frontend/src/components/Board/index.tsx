@@ -93,7 +93,7 @@ function Board() {
 
       {/* Add List Button */}
       <div className={styles.listWrapper}>
-        <AddButton />
+        <AddButton onClick={handleAddList} />
       </div>
     </div>
   )
