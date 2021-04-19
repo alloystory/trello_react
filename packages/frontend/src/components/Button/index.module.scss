@@ -1,12 +1,13 @@
+@use '../../styles/fonts';
 @use '../../styles/colors';
 @use '../../styles/variables';
 
 %base {
-  background-color: colors.$dark-blue;
+  @extend %text1;
+  background-color: inherit;
+  color: inherit;
   border-radius: variables.$border-radius;
   border: none;
-  color: #fff;
-  font-size: 16px;
 
   &:hover {
     cursor: pointer;

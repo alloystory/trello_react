@@ -5,7 +5,7 @@ import styles from './index.module.scss'
 
 export default function App() {
   return (
-    <div className={styles.layout}>
+    <div className={styles.app}>
       <Header />
       <Board />
     </div>

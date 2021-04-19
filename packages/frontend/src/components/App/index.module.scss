@@ -1,5 +1,11 @@
-.layout {
+@use '../../styles/fonts';
+@use '../../styles/colors';
+
+.app {
   display: flex;
   flex-direction: column;
   height: 100vh;
+
+  font-family: fonts.$font-family;
+  background-color: colors.$light-blue;
 }

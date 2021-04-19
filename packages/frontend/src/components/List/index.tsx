@@ -17,10 +17,13 @@ function List({ data, onDeleteList }: Props) {
     setCards(data.cards)
   }, [])
 
-  const handleChangeListName = (event: React.ChangeEvent<HTMLInputElement>) => {
-    event.preventDefault()
-    setTitle(event.target.value)
-  }
+  const handleChangeListName = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      event.preventDefault()
+      setTitle(event.target.value)
+    },
+    []
+  )
 
   const handleAddCard = useCallback(
     () =>
@@ -45,6 +48,7 @@ function List({ data, onDeleteList }: Props) {
         handleDeleteList: onDeleteList,
         handleAddCard,
         handleDeleteCard,
+        handleChangeListName,
       }}
     />
   )

@@ -1,0 +1,8 @@
+@use '../../styles/colors';
+
+.divider {
+  display: block;
+  background-color: colors.$gray;
+  height: 1px;
+  width: 100%;
+}
