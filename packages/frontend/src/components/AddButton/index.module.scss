@@ -1,0 +1,23 @@
+@use '../../styles/colors';
+@use '../../styles/variables';
+
+.addButton {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 12px 8px;
+  background-color: colors.$white;
+  border-radius: variables.$border-radius;
+  border: 1px solid colors.$darker-gray;
+  text-align: center;
+}
+
+.addButton:hover {
+  border-color: colors.$dull-gray;
+  cursor: pointer;
+}
+
+.addButton svg {
+  fill: colors.$black;
+  height: 12px;
+  width: 12px;
+}

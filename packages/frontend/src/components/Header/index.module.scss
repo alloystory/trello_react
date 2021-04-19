@@ -1,28 +1,27 @@
-@use '../../index';
+@use '../../styles/fonts';
+@use '../../styles/colors';
+@use '../../styles/variables';
 
 .header {
   display: flex;
   padding: 16px 48px;
-  background-color: #fff;
+  background-color: colors.$white;
   justify-content: space-between;
-  box-shadow: var(--drop-shadow);
+  box-shadow: variables.$drop-shadow;
 }
 
 .boardTitle {
-  margin: 0;
-  font-size: 24px;
-  font-weight: 600;
-  color: var(--color-font-primary);
+  @extend %heading1;
 }
 
 .searchBar {
   width: 600px;
-  border: 1px solid #ddd;
-  border-radius: var(--border-radius);
+  border: 1px solid colors.$darker-gray;
+  border-radius: variables.$border-radius;
   padding: 6px 16px;
 
   &::placeholder {
-    color: var(--color-item-inactive);
+    color: colors.$darker-gray;
     font-style: italic;
   }
 }
@@ -40,7 +39,7 @@
 }
 
 .sunIcon {
-  fill: var(--color-font-secondary);
+  fill: colors.$white;
   height: 21px;
   width: 21px;
 }

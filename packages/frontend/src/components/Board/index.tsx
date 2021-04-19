@@ -86,13 +86,17 @@ function Board() {
   return (
     <div className={styles.board}>
       {lists.map((list) => (
-        <div key={list._id} className={styles.listWrapper}>
-          <List data={list} onDeleteList={handleDeleteList(list._id)} />
+        <div key={list._id} className={styles.boardColumn}>
+          <List
+            key={list._id}
+            data={list}
+            onDeleteList={handleDeleteList(list._id)}
+          />
         </div>
       ))}
 
       {/* Add List Button */}
-      <div className={styles.listWrapper}>
+      <div className={styles.boardColumn}>
         <AddButton onClick={handleAddList} />
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { ReactComponent as PlusIcon } from '../../assets/plus.svg'
-import styles from './index.module.css'
+import styles from './index.module.scss'
 
 type Props = {
   onClick: () => void

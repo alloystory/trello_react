@@ -1,7 +1,7 @@
 import React, { useEffect, useState, Fragment } from 'react'
 import CardOptions from '../CardOptions'
 import * as types from '@monorepo/backend/types'
-import styles from './index.module.css'
+import styles from './index.module.scss'
 
 type Props = {
   data: types.Card
@@ -20,7 +20,11 @@ function Card({ data, onDeleteCard }: Props) {
     setContent(event.target.value)
   }
 
-  return <button className={styles.card}>{content}</button>
+  return (
+    <button className={styles.card} onClick={onDeleteCard}>
+      {content}
+    </button>
+  )
 }
 
 export default Card

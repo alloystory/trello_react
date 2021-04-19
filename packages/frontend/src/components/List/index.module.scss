@@ -1,0 +1,22 @@
+@use '../../styles/fonts';
+@use '../../styles/colors';
+@use '../../styles/variables';
+
+.list {
+  background-color: colors.$white;
+  box-shadow: variables.$drop-shadow;
+  padding: 24px 16px;
+  border-radius: variables.$border-radius;
+  border-top: 4px solid colors.$dark-gray;
+}
+
+.listHeader {
+  @extend %heading2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.listContent {
+  margin-top: 12px;
+}
