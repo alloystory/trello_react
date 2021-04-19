@@ -19,9 +19,14 @@ export default function Card({ data, onDeleteCard }: Props) {
     setContent(data.content)
   }, [])
 
-  const handleOnClick = useCallback(() => {
-    setIsEditing(true)
-  }, [])
+  const handleOnClick = useCallback(
+    (event: React.MouseEvent<HTMLButtonElement>) => {
+      if (event.target !== event.currentTarget) return
+      event.preventDefault()
+      setIsEditing(true)
+    },
+    []
+  )
 
   const handleEditCard = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     event.preventDefault()
