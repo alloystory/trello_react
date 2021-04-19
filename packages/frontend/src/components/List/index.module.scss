@@ -17,6 +17,11 @@
   justify-content: space-between;
 }
 
+.listHeaderTitle {
+  border: none;
+  text-overflow: ellipsis;
+}
+
 .listContent {
   margin-top: 12px;
 }

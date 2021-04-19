@@ -16,10 +16,15 @@ type Props = {
   handleChangeListName: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-export default function List({ title, handleDeleteList, ...restProps }: Props) {
+export default function List({
+  title,
+  handleDeleteList,
+  handleChangeListName,
+  ...restProps
+}: Props) {
   return (
     <div className={styles.list}>
-      <ListHeader {...{ title, handleDeleteList }} />
+      <ListHeader {...{ title, handleDeleteList, handleChangeListName }} />
       <ListContent {...restProps} />
     </div>
   )
@@ -28,7 +33,8 @@ export default function List({ title, handleDeleteList, ...restProps }: Props) {
 function ListHeader({
   title,
   handleDeleteList,
-}: Pick<Props, 'title' | 'handleDeleteList'>) {
+  handleChangeListName,
+}: Pick<Props, 'title' | 'handleDeleteList' | 'handleChangeListName'>) {
   const options: OptionsActionsMap[] = [
     {
       name: 'Delete List',
@@ -38,9 +44,12 @@ function ListHeader({
 
   return (
     <div className={styles.listHeader}>
-      <a href="/#" onClick={handleDeleteList}>
-        {title}
-      </a>
+      <input
+        type="text"
+        value={title}
+        onInput={handleChangeListName}
+        className={styles.listHeaderTitle}
+      />
       <AdditionalOptionsModal options={options} />
     </div>
   )
