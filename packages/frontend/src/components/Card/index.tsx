@@ -25,9 +25,7 @@ function Card({ data, onDeleteCard }: Props) {
   const options: OptionsActionsMap[] = [
     {
       name: 'Delete Card',
-      action: () => {
-        console.log('delete card')
-      },
+      action: onDeleteCard,
     },
   ]
 

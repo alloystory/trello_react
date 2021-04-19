@@ -32,9 +32,7 @@ function ListHeader({
   const options: OptionsActionsMap[] = [
     {
       name: 'Delete List',
-      action: () => {
-        console.log('delete list')
-      },
+      action: handleDeleteList,
     },
   ]
 
