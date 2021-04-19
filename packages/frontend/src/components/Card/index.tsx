@@ -1,23 +1,29 @@
-import React, { useEffect, useState, Fragment } from 'react'
+import React, { useEffect, useState, Fragment, useCallback } from 'react'
 import * as types from '@monorepo/backend/types'
 import styles from './index.module.scss'
 import AdditionalOptionsModal, {
   OptionsActionsMap,
 } from '../AdditionalOptionsModal'
+import TextareaAutosize from 'react-textarea-autosize'
 
 type Props = {
   data: types.Card
   onDeleteCard: () => void
 }
 
-function Card({ data, onDeleteCard }: Props) {
+export default function Card({ data, onDeleteCard }: Props) {
   const [content, setContent] = useState('')
+  const [isEditing, setIsEditing] = useState(false)
 
   useEffect(() => {
     setContent(data.content)
   }, [])
 
-  const handleEditCard = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleOnClick = useCallback(() => {
+    setIsEditing(true)
+  }, [])
+
+  const handleEditCard = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     event.preventDefault()
     setContent(event.target.value)
   }
@@ -30,13 +36,25 @@ function Card({ data, onDeleteCard }: Props) {
   ]
 
   return (
-    <button className={styles.card}>
-      <div className={styles.cardContent}>
-        <p>{content}</p>
+    <>
+      <button
+        className={[
+          styles.card,
+          isEditing ? styles.cardOverlay : undefined,
+        ].join(' ')}
+        onClick={handleOnClick}
+      >
+        <TextareaAutosize
+          value={content}
+          className={styles.cardContent}
+          onChange={handleEditCard}
+        />
         <AdditionalOptionsModal options={options} />
-      </div>
-    </button>
+      </button>
+
+      {isEditing && (
+        <div className={styles.mask} onClick={() => setIsEditing(false)}></div>
+      )}
+    </>
   )
 }
-
-export default Card
