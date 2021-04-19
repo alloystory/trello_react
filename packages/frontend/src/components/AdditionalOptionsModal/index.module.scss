@@ -1,0 +1,54 @@
+@use '../../styles/fonts';
+@use '../../styles/colors';
+@use '../../styles/variables';
+
+.container {
+  position: relative;
+}
+
+.showOptionsButton {
+  height: 24px !important;
+  width: 24px !important;
+
+  & svg {
+    fill: colors.$gray;
+    width: 10px;
+  }
+
+  &:hover {
+    background-color: colors.$light-gray;
+    svg {
+      fill: colors.$black;
+    }
+  }
+}
+
+.options {
+  @extend %text1;
+  position: absolute;
+  margin-top: 8px;
+  padding: 12px 0;
+  width: 272px;
+  z-index: 1000;
+  box-shadow: variables.$drop-shadow;
+  background-color: colors.$white;
+  border-radius: variables.$border-radius;
+}
+
+.optionsTitle {
+  @extend %heading3;
+  text-align: center;
+  padding: 0 12px;
+}
+
+.optionsDivider {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.optionsRow {
+  padding: 8px 12px;
+  &:hover {
+    background-color: colors.$dull-gray;
+  }
+}

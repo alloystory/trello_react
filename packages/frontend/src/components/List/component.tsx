@@ -1,11 +1,11 @@
 import * as types from '@monorepo/backend/types'
-import React, { useState } from 'react'
+import React from 'react'
 import AddButton from '../AddButton'
+import AdditionalOptionsModal, {
+  OptionsActionsMap,
+} from '../AdditionalOptionsModal'
 import Card from '../Card'
 import styles from './index.module.scss'
-import { ReactComponent as EllipsisIcon } from '../../assets/more.svg'
-import Button from '../Button'
-import Divider from '../Divider'
 
 type Props = {
   title: string
@@ -29,41 +29,21 @@ function ListHeader({
   title,
   handleDeleteList,
 }: Pick<Props, 'title' | 'handleDeleteList'>) {
+  const options: OptionsActionsMap[] = [
+    {
+      name: 'Delete List',
+      action: () => {
+        console.log('delete list')
+      },
+    },
+  ]
+
   return (
     <div className={styles.listHeader}>
       <a href="/#" onClick={handleDeleteList}>
         {title}
       </a>
-      <ListOptions />
-    </div>
-  )
-}
-
-function ListOptions() {
-  const [showOptions, setShowOptions] = useState(false)
-
-  return (
-    <div className={styles.listOptionsContainer}>
-      <Button
-        isSquare
-        className={styles.listOptionsButton}
-        onClick={() => setShowOptions((showOptions) => !showOptions)}
-      >
-        <EllipsisIcon />
-      </Button>
-
-      {showOptions && (
-        <div className={styles.listOptions}>
-          <div className={styles.listOptionsTitle}>
-            <div>Actions</div>
-            <Divider className={styles.listOptionsDivider} />
-          </div>
-          <div className={styles.listOptionsRow}>Delete List</div>
-          <div className={styles.listOptionsRow}>Delete List</div>
-          <div className={styles.listOptionsRow}>Delete List</div>
-          <div className={styles.listOptionsRow}>Delete List</div>
-        </div>
-      )}
+      <AdditionalOptionsModal options={options} />
     </div>
   )
 }
