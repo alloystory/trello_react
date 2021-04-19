@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import styles from './index.module.scss'
 import { ReactComponent as EllipsisIcon } from '../../assets/more.svg'
 import Button from '../Button'
@@ -16,6 +16,13 @@ export type OptionsActionsMap = {
 
 export default function AdditionalOptionsModal({ options }: Props) {
   const [isOptionsShown, setIsOptionsShown] = useState(false)
+  const handleOnClick = useCallback(
+    (action) => () => {
+      action()
+      setIsOptionsShown(false)
+    },
+    []
+  )
 
   return (
     <div className={styles.container}>
@@ -36,9 +43,13 @@ export default function AdditionalOptionsModal({ options }: Props) {
 
           {options.map((option) => {
             return (
-              <div key={nanoid()} className={styles.optionsRow}>
+              <Button
+                key={nanoid()}
+                className={styles.optionsRow}
+                onClick={handleOnClick(option.action)}
+              >
                 {option.name}
-              </div>
+              </Button>
             )
           })}
         </div>

@@ -47,7 +47,10 @@
 }
 
 .optionsRow {
-  padding: 8px 12px;
+  width: 100%;
+  text-align: left;
+  padding: 8px 12px !important;
+  border-radius: 0 !important;
   &:hover {
     background-color: colors.$dull-gray;
   }
