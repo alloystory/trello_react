@@ -1,6 +1,7 @@
 import * as types from '@monorepo/backend/types'
 import { nanoid } from 'nanoid'
 import React, { useCallback, useEffect, useState } from 'react'
+import { CardData } from '../Card'
 import ListComponent from './component'
 
 type Props = {
@@ -10,7 +11,7 @@ type Props = {
 
 function List({ data, onDeleteList }: Props) {
   const [title, setTitle] = useState('')
-  const [cards, setCards] = useState<types.Card[]>([])
+  const [cards, setCards] = useState<CardData[]>([])
 
   useEffect(() => {
     setTitle(data.title)
@@ -29,7 +30,7 @@ function List({ data, onDeleteList }: Props) {
     () =>
       setCards((cards) => [
         ...cards,
-        { _id: nanoid(), content: 'somecontent' },
+        { _id: nanoid(), content: '', isNew: true },
       ]),
     []
   )

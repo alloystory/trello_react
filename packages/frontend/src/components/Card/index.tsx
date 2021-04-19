@@ -6,14 +6,18 @@ import AdditionalOptionsModal, {
 } from '../AdditionalOptionsModal'
 import TextareaAutosize from 'react-textarea-autosize'
 
+export type CardData = types.Card & {
+  isNew?: boolean
+}
+
 type Props = {
-  data: types.Card
+  data: CardData
   onDeleteCard: () => void
 }
 
 export default function Card({ data, onDeleteCard }: Props) {
   const [content, setContent] = useState('')
-  const [isEditing, setIsEditing] = useState(false)
+  const [isEditing, setIsEditing] = useState(data.isNew)
 
   useEffect(() => {
     setContent(data.content)
