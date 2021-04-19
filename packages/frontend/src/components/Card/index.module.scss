@@ -19,3 +19,9 @@
     margin-bottom: 0;
   }
 }
+
+.cardContent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}

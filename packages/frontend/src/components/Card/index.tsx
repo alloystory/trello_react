@@ -33,8 +33,10 @@ function Card({ data, onDeleteCard }: Props) {
 
   return (
     <button className={styles.card}>
-      {content}
-      <AdditionalOptionsModal options={options} />
+      <div className={styles.cardContent}>
+        <p>{content}</p>
+        <AdditionalOptionsModal options={options} />
+      </div>
     </button>
   )
 }
